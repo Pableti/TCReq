@@ -2,25 +2,20 @@
 \usepackage{times}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage{natbib}
+\usepackage[authoryear]{natbib}
 \usepackage{amsthm,amsmath,amsfonts,amssymb}
 \usepackage[doublespacing]{setspace}
-\usepackage{threeparttable}
 \usepackage{graphicx}
+\usepackage{tabularx}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{arydshln}
 \usepackage{lscape}
 \usepackage{pdflscape}
-\usepackage{tabularx}
-\setlength{\extrarowheight}{3pt}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
 
-\topmargin -1.5cm
-\oddsidemargin 0.0cm
-\textwidth 16.5cm 
-\textheight 23cm
-\footskip 1.0cm
-\voffset 0cm
 
 %\usepackage{setspace}
 %\singlespacing
@@ -28,54 +23,66 @@
 %\doublespacing
 %\setstretch{1.1}
 
-\title{Estimación de Tipo de Cambio Real de Equilibrio para Bolivia en el periodo 1999-2016} 
+\title{Tipo de Cambio Real de Equilibrio de Bolivia} 
 
-\author{Hugo Pablo Rocha Portugal \and Paola Cecilia Yujra Tonconi}
+%\author{Hugo Pablo Rocha Portugal \and Paola Cecilia Yujra Tonconi}
+\author{10195}
 
-\date{}
-
-
-
-%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
-
-
+\date{\today}
 
 \begin{document} 
 
 \maketitle 
 
 \begin{abstract}
-jksajkdfjksdfkf
+\singlespacing
+
+En el presente documento se discute el paradigma de crecimiento económico basado en la competitividad externa. Para contrastar esta idea, se analizan las políticas cambiarias bolivianas que buscaron este objetivo. Para dicho efecto, se plantea el estudio complementario de varias perspectivas para hallar la senda de equilibrio del tipo de cambio real. El análisis permite no solo determinar la relevancia y compatibilidad de estos métodos con las características particulares de la economía revisada, sino también propone elementos importantes para poder construir una medida más relevante y apropiada de equilibrio. En el documento se encuentra que el tipo de cambio real no es una medida de competitividad externa de las exportaciones aunque tienen un efecto particular en las importaciones. Por otro lado, se propone que la política cambiaria sobre el tipo de cambio nominal no es la mejor manera de estimular cambios en el TCR. Finalmente, se encuentra el conjunto de fundamentos relacionados con la dinámica de la serie en cuestión.
+\\
+\\
+\bigskip
+Palabras clave: Estimación, BEER, DEER, Tipo de Cambio Real, Economía abierta \\
+Clasificación JEL: E500, F140, C510
+
 \end{abstract}
 
 \newpage
 
 \section{Introducción}
 
-Tras la hiperinflación que Bolivia sufrió durante la primera mitad de los 80s, la economía local se restituyó caracterizada por la precariedad de sus mercados incluso habiéndose logrado una solución satisfactoria que puso fin a dicha patología en precios. La delicadeza de la situación estaba representada por un proceso de insipiente crecimiento debido a su economía primaria e informal que se vio combinada con régimen cambiario \emph{crawling peg}. Las constantes devaluaciones de la moneda local limitaron la efectividad de la política monetaria y generaron una alta dependencia al dólar americano. Al mismo tiempo, las condiciones particulares por las que la economía pasaba no permitieron cambiar su matriz productiva al paradigma industrial a diferencia de sus vecinos regionales que ya habían logrado incurrir en este camino décadas atrás; la explotación de materias primas para exportación aún constituía el factor de crecimiento característico de la economía boliviana, así como lo fue desde épocas coloniales. Como consecuencia de ello, el crecimiento económico en la década de los 90s fue limitado y caracterizado por una débil hegemonía institucional y política. Sin embargo, a mediados de la década de 2000s, el incremento de precios de materias primas sumado a la nacionalización de hidrocarburos se constituyeron en elementos claves para que Bolivia presente mejorías en sus indicadores macroeconómicos y sociales.
+%A pesar que la estructura económica de Bolivia ha evolucionado, se debe destacar que existen persistentes características que determinan la identidad de la misma. Estudios que las particularizan están diseminados a través de la memoria académica del país, de entre los cuales muy pocos lograron trascender el ámbito local como testimonio elocuente del funcionamiento de la economía boliviana y muchos de autoría foránea no siempre consiguen plasmar comprehensiblemente la realidad del caso. Asimismo, estos documentos son selectivos en los rasgos característicos de la economía, esta selectividad abusa del proceso de pesquisa de la disciplina económica que utiliza supuestos y simplificaciones fuertes obteniendo conclusiones altamente cuestionables. En este documento no se pretende discutir las consecuencias de esta práctica pero se pretende ofrecer un análisis que amalgama las practicas comunes de la economía empírica con el contraste de la observación crítica de la historia económica.
+
+%En este sentido, de entre la evidencia que destaca la existencia de ciclos en la economía boliviana se debe rescatar que el registro del último ciclo, tomando como punto de referencia la actualidad, se data su inicio hace más de 40 años. Sin embargo, incluso siendo este periodo perteneciente al periodo moderno de la economía no se tiene una colección de datos completa, estando disponible menos del 75\% de ellos. Por lo tanto, se plantea revisar históricamente hitos importantes que determinaron comportamientos persistentes y quiebres estructurales de los momentos en los que no se tienen datos y realizar un análisis empírico a través de aquellos periodos con disponibilidad de información cuantitativa.
+
+Tras la devastadora hiperinflación que Bolivia sufrió durante la primera mitad de la década de los ochenta, la economía local se restituyó habiéndose logrado una solución satisfactoria que puso fin a dicha patología en precios. Sin embargo, características como contrabando, informalidad, corrupción, pobreza y dolarización fueron cada vez más comunes en las descripciones de la economía durante el posterior periodo de estabilización. La delicadeza de la situación estaba representada por un proceso de insipiente crecimiento debido a su economía primaria e informal que se vio combinada con la dependencia de las importaciones y el régimen cambiario \emph{crawling peg}. Las constantes devaluaciones de la moneda local limitaron la efectividad de la política monetaria y generaron una alta dependencia al dólar americano. Los bienes importados tenían precios en bolivianos cada vez mayores por el costo elevado de importación y la constante depreciación de la moneda local, haciendo que la preferencia por moneda se traslade a la divisa estadounidense. Este hecho combinado con los bajos niveles de remuneración y precariedad del mercado laboral profundizaron la informalidad y el contrabando, el primero como alternativa a fuentes de ingreso y el segundo como fuente de abastecimiento barato, y esta relación generó un círculo de complementariedad importante entre ellos mismos. 
+
+Al mismo tiempo, las condiciones particulares por las que la economía pasaba no permitieron cambiar su matriz productiva al paradigma industrial a diferencia de sus vecinos regionales que ya habían logrado incurrir en este camino décadas atrás; la explotación de materias primas para exportación aún constituía el factor de crecimiento característico de la economía boliviana, así como lo fue desde épocas coloniales y de toda la república. Por un lado, los costos de producción eran muy elevados desde el punto de vista capital pues gran parte de esa inversión debería ser importada, limitando la llegada de nuevas tecnologías que producen más a menor costo. Este hecho generó la búsqueda de competitividad en precios de las industrias que sacrificaron productividad y calidad mediante salarios bajos en un esquema institucional débil de protección al trabajador. Como consecuencia de ello, el crecimiento económico en la década de los noventa que se constituye en la parte de estabilización del nuevo paradigma económico después de la crisis fue limitado y caracterizado por una débil estabilidad institucional y política. Sin embargo, a mediados de la década de 2000s, el incremento de precios de materias primas sumado a la nacionalización de hidrocarburos se constituyeron en elementos claves para que Bolivia presente mejorías en sus indicadores macroeconómicos y sociales.
 
 %Exito económico
-El éxito de Bolivia en materia económica es sobresaliente desde 2004-2005 hasta la actualidad. Efectivamente, el país pasó de ser uno de los más pobres del subcontinente a tener el crecimiento económico más importante de la región. Al mismo tiempo, consiguió recaudar elevados niveles de Reservas Internacionales Netas, reducir los niveles de pobreza y desigualdad, des-dolarizar su economía, reducir los niveles de deuda y mantener niveles controlados de inflación. Incluso cuando los términos de intercambio no le favorecieron. A partir de 2014, Bolivia demostró una gran capacidad de resiliencia. Ante todos estos logros queda preguntarse cuales fueron los factores más importantes que contribuyeron a su consecución.
+El éxito de Bolivia en materia económica es sobresaliente desde 2004-2005 hasta la 2014. Efectivamente, el país pasó de ser uno de los más pobres del subcontinente a tener el crecimiento económico más importante de la región. Al mismo tiempo, consiguió recaudar elevados niveles de Reservas Internacionales Netas (RIN), reducir los niveles de pobreza y desigualdad, des-dolarizar su economía, reducir los niveles de deuda y mantener niveles controlados de inflación. Incluso cuando los términos de intercambio no le favorecieron, a partir de 2014, Bolivia demostró una gran capacidad de resiliencia aplicando políticas macro prudenciales y contra-cíclicas. Ante todos estos logros queda preguntarse cuales fueron los factores más importantes que contribuyeron a su consecución.
 
 %Sector externo
-Sin lugar a dudas, el desempeño de la balanza comercial se constituye en el influjo de divisas más grandes que Bolivia ha percibido en su historia. A partir de 2004 y consolidándose a finales de 2005, las exportaciones de hidrocarburos presentaron niveles elevados los cuales se incrementaban fuertemente periodo tras periodo. La consecuente nacionalización de 2006 fue una de las políticas nacionales más importantes pues permitió que el país capte, utilice y distribuya estas ganancias de la mejor manera que vio conveniente. Por estas razones, este fenómeno está altamente correlacionado con el citado éxito económico de los últimos 15 años. En este sentido, no es casualidad que la meta de las pasadas autoridades políticas y económicas del país haya estado orientada a la bonanza de comercio internacional basando sus esperanzas en el desempeño del sector extractivo.
+Sin lugar a dudas, el desempeño de la balanza comercial de este periodo de expansión, destacado previamente, se constituye en el influjo de divisas y riqueza más importante desde finales de la década de los setenta. A partir de 2004 y consolidándose a finales de 2005, las exportaciones de hidrocarburos presentaron valores elevados los cuales se incrementaban significativamente periodo tras periodo. La nacionalización de 2006 fue una de las políticas nacionales más importantes pues permitió que el país capte, utilice y distribuya estas ganancias siendo que previo a esta medida quien se quedaba con la mayoría de las utilidades eran las empresas trans-nacionales que operaban la exploración y explotación de recursos naturales en Bolivia. Por estas razones, este fenómeno está altamente correlacionado con el citado éxito económico. En este sentido, no es casualidad que la meta de las pasadas autoridades políticas y económicas del país haya estado orientada a la bonanza de comercio internacional basando sus esperanzas en el desempeño del sector extractivo.
 
-En este periodo de boom, los impuestos directos a los hidrocarburos permitieron al gobierno central emprender políticas públicas importantes como la implementación de bonos sociales dirigidos principalmente a niños, madres en gestación y adultos mayores, los cuales constituyen la población más vulnerable del país. Asimismo, dichos influjos permitieron el incremento de RIN y gasto e inversión pública ejecutados a través del gobierno central así como por los gobiernos departamentales y municipales. Los proyectos públicos con mayor notoriedad que recibieron estos recursos son las Empresas Públicas Estratégicas, FINPRO, etc. Al mismo tiempo, estos recursos ejecutados en la economía permitieron a su vez el fomento del gasto e inversión privada magnificando los esfuerzos iniciales. Teóricamente, este contexto positivo dió curso a las condiciones que permitieron mantener el tipo de cambio nominal estable; lo cual tuvo como resultado la des-dolarización de la economía, el anclaje de las expectativas de la población sobre la moneda local y la reducción de presiones inflacionarias externas que permitió generar espacios para ejercer la política monetaria cuando fuese necesario. 
+En este periodo de boom, los impuestos directos a los hidrocarburos permitieron al gobierno central emprender políticas públicas importantes como la implementación de bonos sociales dirigidos principalmente a niños, madres en gestación y adultos mayores, los cuales constituyen la población más vulnerable del país. Asimismo, dichos influjos permitieron el incremento de RIN y gasto e inversión pública ejecutados a través del gobierno central así como por los gobiernos departamentales y municipales. Los proyectos públicos con mayor notoriedad que recibieron estos recursos son las Empresas Públicas Estratégicas, obras de caminos y construcción de infraestructura. Al mismo tiempo, estos recursos inyectados en la economía primero a través del gasto público y después por la política monetaria permitieron a su vez el fomento del gasto privado e inversión privada magnificando los resultados siendo en los últimos años esta tendencia determinada por el crédito financiero orientado a la vivienda social y al sector productivo en su forma de política monetaria contra-cíclica. 
+
+En el contexto económico, la subida de precios internacionales de materias primas a partir de 2004-2005 trajo posteriormente consigo, además del éxito exportador, inflación interna la cual pudo ser contenida gracias al respaldo y confianza de la población en las RIN recién acumuladas apreciando la moneda local. Esta medida contribuyó, junto a otras, a la des-dolarización financiera de la economía. Habiéndose contenido las presiones inflacionarias la crisis financiera internacional generó la demanda de dólares en la economía generando presiones de devaluación que fueron contenidas con la estabilidad cambiaria. Tras este evento, el repunte de los precios internacionales y otras crisis externas implicaron la reaparición de presiones inflacionarias que fueron combatidas apreciando la moneda por un último periodo. Finalmente, a partir de 2012 se ha estabilizado el movimiento cambiario hasta la actualidad. En resumen, el Banco Central de Bolivia aduce que la estabilidad cambiaria actual ha permitido mitigar las presiones inflacionarias de origen externo, anclar las expectativas de los agentes económicos con respecto del valor del dólar y des-dolarizar financieramente la economía.
+
+En contraste, y para dar contexto a la política cambiaria en esta etapa, durante la década de los noventas y tras la estabilización post-hiperinflación, el crecimiento económico a través de exportaciones, des-dolarización, ejecución soberana de la política monetaria son resultados que se constituyen en el santo grial perseguido por los hacedores de política bolivianos que confiaron en la continua devaluación, en su versión del regimen cambiario \emph{``crawling peg''}, para poder alcanzar un nivel de competencia externa. Es decir, plantearon a la devaluación nominal como el instrumento para devaluar el tipo de cambio real en la dirección que permita incrementar las exportaciones. Esto debido al paradigma económico que se manejó e incluso aún se considera: el camino boliviano hacia la riqueza y éxito económico estaría determinado por las exportaciones que generan utilidad económica y la entrada de divisas, activos por los cuales se conseguiría la solución a todos los problemas inmediatos y acumulados de la economía nacional. Por este motivo es que siempre se plantea la búsqueda de competitividad en el comercio externo.
 
 %TCR como nivel de competitividad
-Debido a la importancia que las exportaciones tienen para la economía de Bolivia es pertinente estudiar aquellas variables económicas que la fomentan y los comovimientos que comparten. Si bien los términos de intercambio y la nacionalización de hidrocarburos beneficiaron al crecimiento, se deben identificar las políticas económicas que hayan incentivado el importante periodo de bonanza. En teoría, la más importante de ellas es el tipo de cambio real debido a que captura el nivel de competitividad de los productos bolivianos comparado con los de sus principales socios comerciales. La depreciación de esta variable implicaría el abaratamiento de los bienes y servicios nacionales haciéndolos más atractivos para su compra desde la perspectiva foránea; este hecho generaría el incremento de las exportaciones.
+Debido a la importancia que las exportaciones tienen para la economía de Bolivia es pertinente estudiar aquellas variables económicas que las fomentan y los comovimientos que comparten. Si bien los términos de intercambio y la nacionalización de hidrocarburos sin lugar a duda beneficiaron al crecimiento, se deben identificar las políticas económicas que hayan logrado o podido haber logrado aprovechar el importante periodo de bonanza. En teoría, la más importante de ellas es la política cambiaria que podría haber definido el tipo de cambio real que teóricamente captura la competitividad de los productos bolivianos comparado con sus principales socios comerciales. Teóricamente, la depreciación de esta variable implicaría el abaratamiento de los bienes y servicios nacionales haciéndolos más atractivos para sus compradores internacionales, generando el incremento de las exportaciones.
 
 %Estabilidad cambiaria y como el TCN determina al TCR
-Los hacedores de política fueron conscientes de la importancia del tipo de cambio real y de la bonanza en exportaciones. En efecto, el proceso cambiario de finales de los 80s hasta 2005 denominado \emph{crawling peg} se constituyó en la política cambiaria boliviana que tuvo como objetivo principal incrementar la competitividad nacional a través de constantes mini devaluaciones no anunciadas que, según el plan, permitirían mantener un tipo de cambio real consistente con un equilibrio en la balanza comercial. Sin embargo, a pesar del esfuerzo que implicó dicho régimen cambiario, no se logró el objetivo asumido sino hasta finales de su vigencia. De igual manera, llama la atención que el incremento de las exportaciones sucedió cuando el tipo de cambio real atravesó una fase de profunda apreciación implicando un hecho contrario a lo adelantado por la teoría.
+%Como ya ha sido adelantado, los hacedores de política fueron conscientes de la importancia del tipo de cambio real y de la bonanza en exportaciones. En efecto, el proceso cambiario de finales de los 80s hasta 2005 denominado \emph{crawling peg} se constituyó en la política cambiaria boliviana que tuvo como objetivo principal incrementar la competitividad nacional a través de constantes mini devaluaciones no anunciadas que, según el plan, permitirían mantener un tipo de cambio real consistente con un equilibrio en la balanza comercial. Sin embargo, a pesar del esfuerzo que implicó dicho régimen cambiario, no se logró el objetivo asumido sino hasta finales de su vigencia. De igual manera, llama la atención que el incremento de las exportaciones sucedió cuando el tipo de cambio real atravesó una fase de profunda apreciación implicando un hecho contrario a lo adelantado por la teoría.
 
 %TCReq para saber cual es la mejor política cambiaria, cuanto cuesta mantener el tipo de cambio fijo y desalineamientos y como se mueve
-En este marco, se propone estudiar el tipo de cambio real desde la perspectiva de su equilibrio. Esto permitiría encontrar el balance entre el denominado equilibrio interno y externo, Toda vez que los valores observados y los calculados de equilibrio determinan el desalineamiento al que se puede atribuir el desbalance reflejado en superávit o en déficit comercial. Al mismo tiempo, se puede concluir cual es la mejor política cambiaria para las circunstancias que atravesó el país. Mientras que desde un segundo enfoque, la estimación de este equilibrio cambiario, otorgaría información sobre el set de variables que llegan a determinarlo. 
+En este marco, se propone estudiar el tipo de cambio real desde la perspectiva de su equilibrio. Esto permitiría encontrar el nivel de balance entre el denominado equilibrio interno y externo, es decir el tipo de cambio real que propiciaría la competitividad externa y condiciones internas de la economía para lograr crecimiento sostenible. Los valores observados y calculados de equilibrio determinan el desalineamiento cambiario al que se puede atribuir el desbalance reflejado en la balanza comercial y se constituirían en condiciones que limitan la economía interna. Al mismo tiempo, el análisis podría indicar cual es la mejor política que se podría haber aplicado y se puede aplicar en el futuro. Adicionalmente, la estimación de este equilibrio cambiario, otorgaría información sobre el set de variables que llegan a determinarlo a través de la política económica.
 
 %Lo que se encuentra en el paper
-En este sentido, se utilizan dos metodologías convencionales y complementarias para calcular el tipo de cambio real de equilibrio, las cuales son BEER y DEER. La primera aproximación se enfoca en establecer los determinantes que se espera tengan efectos persistentes y de mediano plazo con el tipo de cambio real encontrado que el tipo de cambio real en tendencia se mantuvo en general bajo la senda de su equilibrio. La segunda metodología propone que los desalineamientos se encuentran antes de 2003 y después de 2013. El uso complementario de estas dos metodologías permiten entender que el primer modelo, más allá de determinar una senda de equilibrio que establece un equilibrio interno y externo, es útil para determinar cuales son las variables que afectan el movimiento de la variable en cuestión; asimismo, el segundo modelo permite entender el equilibrio de la variable en condiciones ``normales", sin embargo, a partir de un análisis más profundo, este método levanta sospechas sobre lo que realmente pasó en la economía boliviana durante los años de bonanza que permitieron que la economía goce del \emph{momentum} necesario para lograr el destacable desempeño referido previamente.
+En este sentido, se utilizan dos metodologías convencionales y complementarias para calcular el tipo de cambio real de equilibrio, las cuales son BEER y DEER. La primera aproximación se enfoca en establecer los determinantes que se espera tengan efectos persistentes y de mediano plazo con el tipo de cambio real, encontrado que el tipo de cambio real en tendencia se mantuvo en general bajo la senda de su equilibrio. La segunda metodología propone que los desalineamientos se encuentran antes de 2003 y después de 2013, momentos en los que los precios en materias primas no beneficiaron los términos de intercambio. El uso complementario de estas dos metodologías permiten entender, a través del primer modelo, cuales son las variables que afectan el movimiento del TCR y su correspondiente equilibrio y, mediante el segundo modelo, se puede observar cuál es el nivel de depreciación del tipo de cambio real que mejora los niveles de cuenta corriente. Sin embargo, a partir de un análisis más profundo, se encuentran las debilidades de estos métodos, pero al mismo tiempo, estas consideraciones ayudan a entender mejor la economía boliviana y sus particularidad a través de las cuales se puede volver a considerar la mejor forma de medir el tipo de cambio real de equilibrio.
 
-Este documento encuentra que las variables que explican los incrementos de exportaciones y balanza comercial son el incremento de términos de intercambio; el éxito económico derivado de este fenómeno es maximizado por la consecuente nacionalización de hidrocarburos que permite que el gobierno tenga hegemonía sobre los recursos generados por dicha circunstancia. El incremento de precios de hidrocarburos es independiente de las políticas bolivianas, mientras que la nacionalización es una política interna exógena. Asimismo, el tipo de cambio real no es una medida de competitividad para la mayor parte de bienes que Bolivia exporta, por tanto, su apreciación no la deteriora. Por otro lado, el tipo de cambio real es una medida adecuada de competitividad para las importaciones, su apreciación se puede entender como un factor que, junto al crecimiento económico del país, ayudó a fomentarlas sin perjudicar los elevados valores de exportaciones. A pesar de este último comportamiento, se identifica una baja sensibilidad de las importaciones frente el tipo de cambio real, esta inelasticidad puede ser explicada por la baja capacidad de sustitución de importaciones que la producción boliviana ofrece al consumidor en términos de bienes finales. En este sentido, el tipo de cambio real no es una medida certera de competitividad así como puede ser caracterizada por una medida de poder de compra de la moneda boliviana.
-
+Este documento encuentra que la variable que explican los incrementos de exportaciones y balanza comercial no es la depreciación del tipo de cambio real; el éxito económico aparentemente depende de los términos de intercambio y en el caso específico por la consecuente nacionalización de hidrocarburos que permite que el gobierno tenga hegemonía sobre los beneficios derivados de la venta de los recursos explotados. El incremento de precios de hidrocarburos es independiente de las políticas bolivianas, mientras que la nacionalización es una política interna de características diferentes a las puramente económicas. Por otro lado, el tipo de cambio real es una medida adecuada de competitividad para las importaciones, su apreciación se puede entender como un factor que, junto al crecimiento económico del país, podría haber ayudado a fomentarlas sin perjudicar los elevados valores de exportaciones. A pesar de este último comportamiento, se identifica una baja sensibilidad de las importaciones frente el tipo de cambio real, esta inelasticidad puede ser explicada por la baja capacidad de sustitución de importaciones. En este sentido, el tipo de cambio real no es una medida certera de competitividad en el contexto boliviano pero si puede medir de poder de compra de la moneda boliviana satisfactoriamente.
 
 %El régimen cambiario boliviano fue mutando a través del tiempo. Para acabar con el proceso hiperinflacionario de 1984-1985 se instauró el Bolsín, mecanismo por el cual se reunificaron los tipos de cambio oficial y paralelo permitiendo así la convertibilidad libre de la moneda nacional. Este mecanismo fue mutando hasta constituirse en el régimen \emph{crawling peg} caracterizado por mini devaluaciones controladas y periódicas (reptantes) cuyo objetivo nominal era mantener la competitividad nacional frente el comercio internacional. A partir del 2005, se suscitó un periodo de apreciación que se agudizó entre 2007 y 2008 hasta que en comienzos de 2009 se optó por la estabilidad cambiaria, únicamente seguida por leves apreciaciones en 2010 y 2011. Dicha estabilidad cambiaria continúa hasta la actualidad consituyéndose en el ancla nominal de expectativas a la que se atribuye el principal rol de control de la inflación al limitar las presiones inflacionarias externas y permitió la notable des-dolarización que la economía ha experimentado, gracias a la cual la política monetaria es capaz de cumplir con su objetivos.
 
@@ -102,15 +109,15 @@ Este documento encuentra que las variables que explican los incrementos de expor
 
 %Son estas las cuestiones que motivan el análisis de la política cambiaria boliviana y muy en especial la tendencia de equilibrio del tipo de cambio real del país. A continuación, se estima y analiza bajo los métodos de BEER y una variación de FEER (DEER) las medidas de TCR de equilibrio de corto y mediano plazo. No se realiza el análisis de largo plazo porque es considerado poco significativo para la economía boliviana que aún se encuentra en vías de desarrollo y donde aún no se tiene indicios claros del camino de desenvolvimiento pertinente que contribuya a su crecimiento sostenido y sustentable siendo este último la senda de \emph{steady state} en \emph{stricto sensu} que no es aún vislumbrada. Asimismo, se discute ideas centrales de política cambiaria, se plantean posibles desaciertos, miopía conceptual y se introduce la idea de subvaluación estructural de la moneda en una economía determinada por un fuerte contrabando (importaciones ilegales).
 
-Bajo esta motivación el presente documento plantea la consideración de elementos importantes como definiciones e intentos previos de medir el tipo de cambio real en Bolivia en la sección \ref{pre}; posteriormente, se define la metodología y marco de medición en la sección \ref{tcr}; la verificación de series estadísticas, hechos estilizados y resultados son planteados en la sección \ref{calc}; se continúa con conceptos e ideas teóricas inspiradas en la realidad boliviana en la sección \ref{consid} y para sintetizar lo estudiado la sección \ref{concl} finaliza con las reflexiones más importantes del documento.
+Bajo esta motivación el presente documento plantea la consideración de elementos importantes del tipo de cambio real y de la medición de su equilibrio en la sección \ref{pre}; posteriormente, se define la metodología a ser utilizada la sección \ref{tcr}; la verificación de series estadísticas, hechos estilizados y resultados son planteados en la sección \ref{calc}; se continúa con la reflexión de los resultados encontrados en la sección \ref{consid} y para sintetizar lo estudiado, la sección \ref{concl} concluye el documento.
 
 
 
 \section{Revisión de Literatura}\label{pre}
 
-\subsection*{Definiciones y consideraciones}
+\subsection*{Tipo de cambio real}
 %TCR
-El tipo de cambio real es la variable que refleja cuanto de una canasta básica doméstica es necesaria para comprar una canasta básica extranjera. Esta variable es determinada por la siguiente relación:
+El tipo de cambio real es la variable que refleja cuánto de una canasta básica doméstica es necesaria para comprar una canasta básica extranjera. Esta variable es determinada por la siguiente relación:
 \begin{equation}\label{tcr1}
 Q_t=E_t\frac{P_t^*}{P_t},
 \end{equation}
@@ -126,16 +133,17 @@ donde, el circunflexo implica la diferencia de la variable entre precios domést
 
 Las ecuaciones \ref{tcr1} y \ref{tcrlog} son análogas e implican que, manteniendo todo lo demás constante, los incrementos de tipo de cambio nominal (devaluación nominal) o de los precios extranjeros o las caídas del nivel de precios local determinan una depreciación real de la moneda nacional. Lo contrario aplica para el caso de una apreciación real. Sin embargo, desde la perspectiva caracterizada en \ref{tcr2}, el tipo de cambio real de bienes transables y la diferencia del nivel de precios no transables, y transables, entre el resto del mundo y la economía local determinan los movimientos de la variable en cuestión. Esta última descripción implica una perspectiva más operativa debido que a partir de ella se puede distinguir cual es el efecto de las políticas económicas sobre cada conjunto de bienes. El caso más estudiado, y que empíricamente tiene mayor soporte en la literatura abocada a calcular el equilibrio de tipo de cambio real, entiende que el gasto público (política fiscal) es orientado en su mayoría en bienes no transables, este incremento de demanda permite que los precios de estos bienes se incrementen. 
 
-Por otro lado, la teoría contemporánea no describe cual es el efecto de las otras políticas económicas sobre cada conjunto de bienes. Sin embargo, a continuación se ensayan algunas consideraciones al respecto. El impulso de la política monetaria (sin tomar en cuenta los efectos asimétricos sobre el nivel de precios) afecta en mayor medida a los precios no transables, como servicios y bienes locales cuyos precios dependen del dinamismo de la economía nacional y la inflación. En contraposición, los niveles de precios transables son determinados en mayor medida por los mercados internacionales. En consecuencia, dentro del territorio nacional el nivel de precios transables importados con precios en moneda doméstica serían más influenciados por las depreciaciones de la moneda local (política cambiaria); los niveles de precios de bienes transables producidos domésticamente estarían afectados por el nivel de costos de trabajo e insumos locales y de procedencia extranjera sobre los cuales la política cambiaria también tiene influencia. Asimismo, se entiende que la competencia entre bienes transables locales e importados es importante en la determinación de precios finales en la economía. Se retomará esta discusión en la sección \ref{consid}.
+Por otro lado, la teoría contemporánea no describe cual es el efecto de las otras políticas económicas sobre cada conjunto de bienes. Sin embargo, a continuación se ensayan algunas consideraciones al respecto. El impulso de la política monetaria (sin tomar en cuenta los efectos asimétricos sobre el nivel de precios) afecta en mayor medida a los precios no transables, como servicios y bienes locales cuyos precios dependen del dinamismo de la economía nacional y la inflación. En contraposición, los niveles de precios transables son determinados en mayor medida por los mercados internacionales teniendo en cuenta el análisis de comercio externo abierto. Aquí se debe considerar el concepto de homogeneidad de los bienes transables, lo cual implica que todos estos sean iguales y de la misma calidad independientemente de su origen haciendo que sus precios sean los mismos, sin embargo, en la realidad, se debe considerar que los bienes transables manufacturados tienen diferencias de calidad lo cual hace que sus precios difieran sustancialmente incluso estandarizando por moneda el precio de ellos. En consecuencia, dentro del territorio nacional el nivel de precios transables importados con precios en moneda doméstica serían más influenciados por las depreciaciones de la moneda local (política cambiaria); los niveles de precios de bienes transables producidos domésticamente estarían afectados por el nivel de costos de trabajo e insumos locales y de procedencia extranjera sobre los cuales la política cambiaria también tiene influencia. Asimismo, se entiende que la competencia entre bienes transables locales e importados es importante en la determinación de precios finales en la economía. Se retomará esta discusión en la sección \ref{consid}.
 
 Es importante destacar que en la teoría económica moderna se entiende que la política económica no tiene influencia en el cambio de tendencia del equilibrio de largo plazo del tipo de cambio real. Esto porque, dados los niveles de los fundamentos, la tendencia y el equilibrio están dados. En contraposición, el papel de la política económica está orientada en influir a los fundamentos para que el tipo de cambio real retorne a su nivel de equilibrio cuando se encuentre desequilibrado. Esta perspectiva implica que no se puede estar desviado del nivel de equilibrio por mucho tiempo. Sobre como influir en el movimiento del tipo de cambio real se ampliará la discusión en la sección \ref{consid}.
 
 Entonces, como se ha anotado previamente, las representaciones del tipo de cambio real \ref{tcrlog} y \ref{tcr2} son importantes por distintas razones. La primera, que está basada en el propio concepto de la variable, es utilizada para construir estadísticamente el indicador pertinente que caracteriza dicha variable. Por otro lado, la segunda expresión permite realizar una interpretación sobre las fuerzas que podrían influir en sus movimientos.
 
-Hay algunas consideraciones prácticas al respecto del tipo de cambio real que deben ser apuntadas. En particular, $p_t^*$ y $p_t$ no siempre representan precios de las mismas canastas básicas, esto porque distintos países consumen distintos bienes básicos, o en otras palabras, no todas las economías incluyen exactamente los mismos productos en sus canastas, adicionalmente, esto se puede deber a que frente la modernización y aparición de nuevos bienes, los institutos de estadística tardan en actualizar los productos que deberían entrar en la canasta básica. En teoría, esto podría ocasionar algún ruido en el cálculo del tipo de cambio real que en promedio puede asumirse insignificante, aunque queda la duda hasta qué punto esto es perjudicial.\footnote{Por ejemplo, ¿es relevante entre 2010-2017 incluir los servicios de telefonía pública (cabinas fijas y ambulantes), videoreproductor, VHS, minicomponente, walkman, discman y tantos otros dentro de la canasta básica?} Por otro lado, cuando se relaciona al TCR con el comercio internacional de, por ejemplo, materias primas, parece que esta medida cambiaria no tiene incumbencia pues, como ha sido expuesto, mide la relación de bienes que entran dentro de la canasta básica, a la cual las materias primas y demás insumos productivos son ajenos pero altamente comercializados internacionalmente. Finalmente, a pesar que algunos investigadores asumen que $q_{Tt}=0$, debido al supuesto de perfecta sustitubilidad de bienes transables, en este documento se considera importante tomar en cuenta la diferenciabilidad horizontal y vertical de bienes transables.
+En este sentido, hay algunas consideraciones prácticas al respecto del tipo de cambio real que deben ser apuntadas. En particular, $p_t^*$ y $p_t$ no siempre representan precios de las mismas canastas básicas, esto porque distintos países consumen distintos bienes básicos, o en otras palabras, no todas las economías incluyen exactamente los mismos productos en sus canastas, adicionalmente, esto se puede deber a que frente la modernización y aparición de nuevos bienes, los institutos de estadística tardan en actualizar los productos que deberían entrar en la canasta básica. En teoría, esto podría ocasionar algún ruido en el cálculo del tipo de cambio real que en promedio puede asumirse insignificante, aunque queda la duda hasta qué punto esto es perjudicial.\footnote{Por ejemplo, ¿es relevante entre 2010-2017 incluir los servicios de telefonía pública (cabinas fijas y ambulantes), videoreproductor, VHS, minicomponente, walkman, discman y tantos otros dentro de la canasta básica?} Por otro lado, cuando se relaciona al TCR con el comercio internacional de, por ejemplo, materias primas, parece que esta medida cambiaria no tiene incumbencia pues, como ha sido expuesto, mide la relación de bienes que entran dentro de la canasta básica, a la cual las materias primas y demás insumos productivos son ajenos pero altamente comercializados internacionalmente. Finalmente, a pesar que algunos investigadores asumen que $q_{Tt}=0$, debido al supuesto de perfecta sustitubilidad de bienes transables, en este documento se considera importante tomar en cuenta la diferenciabilidad horizontal y vertical de bienes transables.
 
-%TCReq
-Dada la definición del tipo de cambio real es preciso establecer la definición de su correspondiente equilibrio. El mismo es una variable no observada que idealmente podría ser considerada como el contrafactual positivo\footnote{Desde la perspectiva deontológica de la ciencia.} del tipo de cambio real. En otras palabras, es la variable que captura los valores ideales o en equilibrio de los componentes que conforman el tipo de cambio real. En este sentido, se entiende como valor de equilibrio al tipo de cambio real que representa a la economía abierta que está en equilibrio tanto a nivel interno como externo. Las implicaciones de lo que implica estar en equilibrio son discutibles porque implica distintas interpretaciones dependiendo de la perspectiva del autor.
+\subsection*{Tipo de cambio real de equilibrio}
+
+Dada la definición del tipo de cambio real es preciso establecer la definición de su correspondiente equilibrio. El mismo es una variable no observada que idealmente podría ser considerada como el contrafactual positivo\footnote{Desde la perspectiva deontológica de la ciencia.} del tipo de cambio real. En otras palabras, es la variable que captura los valores ideales o en equilibrio de los componentes que conforman el tipo de cambio real. En este sentido, se entiende como valor de equilibrio al tipo de cambio real que representa a la economía abierta que está en equilibrio tanto a nivel interno como externo. Las implicaciones de estar en equilibrio son discutibles porque implica distintas interpretaciones dependiendo de la perspectiva del autor.
 
 El propio hecho de que una variable denominada tipo de cambio real de equilibrio exista, indica que la ciencia social acepta tanto teórica como empíricamente que el tipo de cambio observado no está conformado por los valores de equilibrio de los mercados pertinentes que lo conforman. En este sentido, se puede entender que existen distorsiones (transitorias o inesperadas) en dichos mercados que generan valores observados que podrían no corresponder a lo que deberían representar y en el peor de los casos retroalimentarse debido a algún tipo de persistencia. El hecho de reconocer este hecho permite entender a las distorsiones transitorias o no anticipadas desde distintos puntos de vista, lo cual da pié a tener varios tipos de conceptos de equilibrio.
 
@@ -160,7 +168,7 @@ La literatura especializada en la determinación de un tipo de cambio real de eq
 
 \subsection*{Metodologías}
 %Basado en los surveys corto conciso y finalmente analítico concentrarse no en describirlos pero en los pros y contras
-Para definir la metodología de medición es necesario determinar cual es el objetivo final de la derivación del tipo de cambio real de equilibrio. Como ha sido adelantado, hay una variedad de métodos de los cuales se puede escoger dependiendo de la finalidad y alcance que se quiere dar a la perspectiva de estudio. \cite{driver2005concepts}, \cite{macdonald2000concepts} e incluso \cite{akrama2003real} ofrecen una buena recolección de métodos.
+Para definir la metodología de medición es necesario determinar cual es el objetivo final de la derivación del tipo de cambio real de equilibrio. Como ha sido adelantado, hay una variedad de métodos de los cuales se puede escoger dependiendo de la finalidad y alcance que se quiere dar a la perspectiva de estudio. \cite{driver2005concepts}, \cite{macdonald2000concepts} y \cite{akrama2003real} ofrecen una buena recolección de métodos.
 
 Los equilibrios obtenidos de estas metodologías son distintos entre ellos. La razón se basa en el hecho que cada una está determinada por diferentes supuestos y conceptos de equilibrio. Como se ha decidido revisar una visión de completariedad entre el corto y mediano plazo se procederá a revisarlas y escoger a la que se constituya la más apropiada desde la perspectiva económica de Bolivia.
 
@@ -178,7 +186,7 @@ Asimismo, el uso de componentes de norma y subyacente para FEER implican asumir 
 
 Entonces, dado el repaso de las metodologías existentes y tomando en cuenta la pertinencia de ellas para su aplicación en el caso boliviano, se aplicará la metodología BEER y DEER para realizar la estimación del tipo de cambio real de equilibrio. 
 
-\subsection*{Evidencia empírica internacional}
+%\subsection*{Evidencia empírica internacional}
 %La mayoría de esta literatura no solamente es el paper teórico sino tambien la aplicación
 %Países desarrollados
 %Países emergentes
@@ -188,10 +196,10 @@ Entonces, dado el repaso de las metodologías existentes y tomando en cuenta la 
 
 \subsection*{Evidencia empírica en Bolivia}
 %Qué se ha hecho
-Acompañando la búsqueda del cometido que se tiene en el presente documento se ha revisado la evidencia de investigaciones en Bolivia en la búsqueda de la determinación del tipo de cambio real de equilibrio. En tal sentido se hace referencia a \cite{ferrufino1992tipo}, \cite{aguilar2003estimacion}, \cite{humerez2005reexaminando}, \cite{montiel2007equilibrium}, \cite{cerutti2008}, \cite{mendieta2008equilibrio}, \cite{bello2010tipo}, \cite{cerezo2010desempeno} y \cite{cerezo2011tipo}. Existen grandes similitudes entre todas las investigaciones generadas especialmente después de 2000. En primera instancia todos buscan estimar los desalineamientos con respecto al equilibrio, y en segundo lugar, todos presentan una metodología similar.
+Acompañando la búsqueda del cometido que se tiene en el presente documento se ha revisado la evidencia de investigaciones en Bolivia en la búsqueda de la determinación del tipo de cambio real de equilibrio. En tal sentido se hace referencia a \cite{ferrufino1992tipo}, \cite{marquez2003estimacion}, \cite{humerez2005reexaminando}, \cite{montiel2007equilibrium}, \cite{cerutti2008bolivia}, \cite{mendieta2008equilibrio}, \cite{bello2010tipo}, \cite{cerezo2010desempeno} y \cite{cerezo2011tipo}. Existen grandes similitudes entre todas las investigaciones generadas especialmente después de 2000. En primera instancia todos buscan estimar los desalineamientos con respecto al equilibrio, y en segundo lugar, todos presentan una metodología similar.
 
 %Metodología + resultados importantes
-En este sentido, los documentos citados se diferencian por su identificación a pesar que en última instancia ejecutan la misma metodología econométrica. Típicamente, los documentos que presentan estructura de identificación son aquellos previos al 2005. Específicamente, se hace referencia a la identificación de \cite{lora2000tipo}, citada también por \cite{aguilar2003estimacion} la misma que se constituye en la principal sistematización teórica que justifica el comportamiento del tipo de cambio real. Esta identificación está basada en el trabajo analítico de \cite{hinkle1999exchange} que asocia la demanda de trabajo en los sectores transables y no transables de una economía y la producción generada por los mismos junto con los componentes de la cuenta corriente y el comportamiento del gobierno. Adicionalmente, \cite{humerez2005reexaminando} utiliza la identificación de \cite{elbadawi1994estimating} a partir de las identidades y relaciones de cuentas nacionales. 
+En este sentido, los documentos citados se diferencian por su identificación a pesar que en última instancia ejecutan la misma metodología econométrica. Típicamente, los documentos que presentan estructura de identificación son aquellos previos al 2005. Específicamente, se hace referencia a la identificación de \cite{lora2000tipo}, citada también por \cite{marquez2003estimacion} la misma que se constituye en la principal sistematización teórica que justifica el comportamiento del tipo de cambio real. Esta identificación está basada en el trabajo analítico de \cite{baffes1999red} y \cite{hinkle1999exchange} que asocia la demanda de trabajo en los sectores transables y no transables de una economía y la producción generada por los mismos junto con los componentes de la cuenta corriente y el comportamiento del gobierno. Adicionalmente, \cite{humerez2005reexaminando} utiliza la identificación de \cite{elbadawi1994estimating} a partir de las identidades y relaciones de cuentas nacionales. 
 
 Los documentos posteriores no presentan claramente una estrategia de identificación, sin embargo, heredan el método de cointegración original y se concentran en probar la inclusión de distintos fundamentos en la relación de estudio y ampliar la base de datos, siendo que esta última no está unificada entre las investigaciones analizadas. Por este motivo, es que se puede concluir que para estos trabajos la identificación del movimiento del TCR determinado por sus fundamentos es no estructural. Al mismo tiempo se podría proponer que siguen una visión de estimación reducida, que es como puede ser identificada estas metodologías en la literatura pertinente.
 
@@ -202,9 +210,8 @@ Los primeros dos métodos adicionales del documento citado de \cite{cerezo2011ti
 %\begin{landscape}
 \begin{table}
 \begin{center}
-\caption{\centering Lista de Fundamentos de TCR incluidos en estudios para Bolivia y signo con el que intervienen en la relación}
-\begin{threeparttable}
-\resizebox{\textwidth}{!}{ 
+\caption{Lista de Fundamentos de TCR en Bolivia}\label{otros}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lccccccccc}									
 \hline
 \hline													
@@ -252,15 +259,12 @@ Sobrevaluado	&		&		&		&		&		&		&		&		&	 08-09	\\
 Subvaluado	&		&		&		&		&		&		&		&		&	 05-06, 09-10	\\
 \hline
 \hline
-\end{tabular}
+\end{tabular}%
 }
-\begin{tablenotes}
-\small
- \item  Elaboración propia con base a los documentos previamente citados.
-\end{tablenotes}
-\end{threeparttable}					
 \end{center}
-\label{otros}	
+\begin{scriptsize}
+\emph{Nota:} Elaboración propia con base a los documentos previamente citados.
+\end{scriptsize}					
 \end{table}	
 %\end{landscape}
 
@@ -277,7 +281,7 @@ Por otro lado, dada la heterogeneidad de usos de este concepto parece necesario 
 
 
 
-\subsection{Identificación de BEER}
+\subsection*{Identificación de BEER}
 
 La medición del método BEER nace de la condición de paridad de tasas de interés encubierta. Utilizar simplemente esta condición imponía el reto de incluir en el modelo las expectativas de tipo de cambio, \cite{clark1999exchange} las sustituyeron por las tendencias de los fundamentos. Es la identificación de estos autores que se sigue a continuación.
 
@@ -314,18 +318,17 @@ En esencia se considerá como base el modelo de \cite{Calderon2004exchange}, que
 Un segundo aspecto relevante hace referencia a los representantes de la economía doméstica, que estarán dotados de una cantidad constante del bien transable en cada periodo, además tienen el poder monopólico sobre uno de los bienes no transables. Mientras que los productores residen en ambos paises en intervalos definidos. 
 Con relación a las preferencias sobre el consumo real y el esfuerzo laboral se definen como idénticas para todos los agentes en el mundo, la simetría en preferencias y restricciones presupuestarias darán lugar a la resolución del problema de optimización del consumidor y productor representativo de la economía doméstica. El modelo considera también, la introducción del gobierno, bajo el supuesto de que éste sólo consume bienes no transables.  
 
-Según la descripción realizada en \cite{Calderon2002panel} y \cite{Calderon2004exchange}, el agente representativo además puede invertir en instrumentos financieros  transables internacionales, específicamente en bonos, por lo que estará sujeto a un flujo de restricción presupuestaria, que será una función del, consumo agregado, la dotación de bienes transables, los precios de los bienes transables y no transables y la tasa de retorno real del instrumento financiero. Hacia adelante este supuesto permitirá incorporar los activos externos netos como fundamento.
-Como explica Calderon(2002) las soluciones log linealizadas del modelo, que son incorporadas a la ecuación del tipo de cambio real, permiten definir la siguiente estructura: 
+Según la descripción realizada en \cite{Calderon2002panel} y \cite{Calderon2004exchange}, el agente representativo además puede invertir en instrumentos financieros  transables internacionales, específicamente en bonos, por lo que estará sujeto a un flujo de restricción presupuestaria, que será una función del, consumo agregado, la dotación de bienes transables, los precios de los bienes transables y no transables y la tasa de retorno real del instrumento financiero. Hacia adelante este supuesto permitirá incorporar los activos externos netos como fundamento. Como explica Calderon(2002) las soluciones log linealizadas del modelo, que son incorporadas a la ecuación del tipo de cambio real, permiten definir la siguiente estructura: 
 
 \begin{equation}
-\ln TCR_t=&\phi_0+\phi_1\left(\frac{F}{Y}\right)_t+\phi_2\ln\left(\frac{Y_T}{A_N} / \frac{Y_T^*}{A_N^*}\right)_t+\phi_3\ln\left(\frac{P_T^X}{P_T^M}\right)_t\\\nonumber&+\phi_4\ln\left(\frac{G}{G^*}\right)_t+\mu_t
+\ln TCR_t=\phi_0+\phi_1\left(\frac{F}{Y}\right)_t+\phi_2\ln\left(\frac{Y_T}{A_N} / \frac{Y_T^*}{A_N^*}\right)_t+\phi_3\ln\left(\frac{P_T^X}{P_T^M}\right)_t+\phi_4\ln\left(\frac{G}{G^*}\right)_t+\mu_t
 \end{equation}
 
-En este marco, los fundamentos que explican el tipo de cambio real de equilibrio, serán por un lado el coeficiente de la posición de activos externos netos, la productividad laboral, los términos de intercambio y el gasto de gobierno.   
+En este marco, los fundamentos que explican el tipo de cambio real de equilibrio, serán por un lado el coeficiente de la posición de activos externos netos, la productividad laboral, los términos de intercambio y el gasto de gobierno.  
 
   
 
-\subsection{Identificación de FEER}
+\subsection*{Identificación de FEER}
 
 El equilibrio en balance externo está basado en la idea que la variación de cuenta corriente está únicamente determinada por la balanza comercial, en este punto se hace abstracción de cualquier otro componente dentro de la Balanza de Pagos que sea influenciada por el tipo de cambio. A su vez, es el tipo de cambio real junto las variables de demanda que determinan los niveles de importaciones y exportaciones, definiéndose las ecuaciones de comercio como:
 \begin{equation}\label{X}
@@ -526,7 +529,7 @@ Por otro lado los modelos FEER al caracterizar un equilibrio parcial sufren de h
 
 
 \section{Resultados}\label{calc}
-\subsection{FEER}
+\subsection*{FEER}
 
 %datos
 En primera instancia se realizan las estimaciones para las ecuaciones de comercio exterior. Lo que se busca es encontrar la elasticidad de exportaciones o importaciones en términos reales con respecto al tipo de cambio real. Previamente, se verifican las series en niveles para aprender acerca de su comportamiento individual y en conjunto. Nótese que todas las variables son integradas de grado 1 especialmente debido a la presencia de tendencias.
@@ -535,34 +538,33 @@ Las variables analizadas son: importación y exportación real (expresadas en mo
 
 \begin{figure}
 \centering
+%\captionsetup[subfigure]{aboveskip=-2pt,belowskip=-2pt}
 \caption{Variables incluidas en el modelo}\label{variables}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{1xm}
         \caption{Exportación e importación}
         \label{1xm}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{3tcr}
         \caption{TCR}
         \label{3tcr}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{5ippbx}
         \caption{Precios internacionales}
         \label{5ippbx}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{2per}
         \caption{PIB externo relevante}
         \label{2per}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{4pib}
         \caption{PIB}
         \label{4pib}
@@ -574,7 +576,6 @@ En principio, la verificación gráfica sugiere que las series de importación y
 \begin{table}
 \caption{Matriz de correlación}
 \begin{center}
-\begin{threeparttable}
 \begin{tabular}{lcccccc}									
 \hline													
 \hline												
@@ -588,22 +589,20 @@ IPPBX	&	0.8949	&	0.8506	&	0.8743	&	-0.3589	&	1	&		\\
 PIB	&	0.9017	&	0.9645	&	0.9835	&	-0.8102	&	0.7821	&	1	\\
 \hline													
 \hline									
-\end{tabular}							
-\begin{tablenotes}
-\small
-\item Elaboración propia.
-\end{tablenotes}	
-\end{threeparttable}
-\end{center}
-\label{Rec}	
+\end{tabular}	
+\end{center}						
+\begin{scriptsize}
+\emph{Nota:} Elaboración propia.
+\end{scriptsize}	
+\label{corre}	
 \end{table}	
 
-Para verificar el análisis gráfico se calcula la matriz de correlación de las variables previamente señaladas. Como había sido adelantado, el PIB externo relevante es la variable más fuertemente asociada a las exportaciones e importaciones seguidas por PIB boliviano y el índice de precios de exportaciones que, como era de esperar, está más correlacionado con las exportaciones. Por otro lado, el tipo de cambio real presenta una correlación negativa con ambas variables especialmente con las importaciones. De acuerdo a la teoría se esperaría que los signos en las ecuaciones \ref{X} y \ref{M} se cumplan y la correlación con las exportaciones sea positiva.
+Para verificar el análisis gráfico se calcula la matriz de correlación de las variables previamente señaladas, las cuales se muestran en la tabla \ref{corre}. Como había sido adelantado, el PIB externo relevante es la variable más fuertemente asociada a las exportaciones e importaciones seguidas por PIB boliviano y el índice de precios de exportaciones que, como era de esperar, está más correlacionado con las exportaciones. Por otro lado, el tipo de cambio real presenta una correlación negativa con ambas variables especialmente con las importaciones. De acuerdo a la teoría se esperaría que los signos en las ecuaciones \ref{X} y \ref{M} se cumplan y la correlación con las exportaciones sea positiva.
 
 \begin{table}
-\caption[Table caption text]{Regresiones de Comercio}
+\caption{Regresiones de Comercio}
 \begin{center}
-\begin{threeparttable}
+\scalebox{0.8}{%
 \begin{tabular}{lcccc}									
 \hline									
 \hline	
@@ -624,27 +623,27 @@ $\Delta tcr$	&	&	0.499**	&	&	-0.095	\\
 	&	&	(0.212)	&	&	(0.075)	\\
 \hline									
 \hline									
-\end{tabular}	
-\begin{tablenotes}
-\small
- \item  \emph{Nota.} La significancia al uno, cinco y diez por ciento es indicada por ***, ** y *, respectivamente.
-\end{tablenotes}								
-\end{threeparttable}					
+\end{tabular}%
+}
 \end{center}
+\begin{scriptsize}
+\emph{Nota:} La significancia al uno, cinco y diez por ciento es indicada por ***, ** y *, respectivamente.
+\end{scriptsize}								
 \label{Rec}	
 \end{table}	
 
 En el cuadro \ref{Rec} se resume los resultados de las regresiones de comercio, se ensayan dos regresiones lineares por cada componente, primero en niveles y después en diferencias. Los resultados en niveles, como es de esperarse, al compartir tanto exportaciones e importaciones tendencia con el PIB externo y el nacional respectivamente se encuentran resultados bastante significativos, pero ``mal especificados'' porque las variables están integradas. Sin embargo, son los resultados de este modelo que realmente miden las elasticidades las cuales no difieren tanto de sus contrapartes diferenciadas. El ensayo de resultados con las variables sin tendencia arroja resultados similares pero menos significativos a pesar de cumplir con las condiciones que la teoría econométrica requiere, sin embargo, demuestran que la relación no es necesariamente espúrea aunque el comportamiento de las importaciones parece estar explicado por otros determinantes. Asimismo, es importante destacar es la que las variables son elásticas a las variables de producción, sin embargo, bastante inelásticas al tipo de cambio real.
 
 \begin{figure}
+\captionsetup[subfigure]{aboveskip=-2pt,belowskip=-2pt}
 \centering
 \caption{Estructura de importaciones y exportaciones de Bolivia}\label{impexp}
-    \begin{subfigure}[b]{0.75\textwidth}
+    \begin{subfigure}[h]{0.65\textwidth}
         \includegraphics[width=\textwidth]{imp9016}
         \caption{Estructura de importaciones}
         \label{mestr}
     \end{subfigure}
-    \begin{subfigure}[b]{0.75\textwidth}
+    \begin{subfigure}[h]{0.65\textwidth}
         \includegraphics[width=\textwidth]{exp9016}
         \caption{Estructura de exportaciones}
         \label{xestr}
@@ -660,14 +659,15 @@ Por el lado de las importaciones, se nota que la estructura se mantiene similar 
 \item La calidad de los bienes importados es superior a la producción doméstica. Esto podría deberse a que la tecnología doméstica es atrasada o que el costo de producir mayor calidad es muy elevado. Por otro lado, relacionando esta hipótesis con la previa se puede pensar que el precio doméstico no es acorde a la calidad ofrecida por lo que la demanda de bienes importados es inelástica al tipo de cambio real. 
 \end{itemize}
 
-De todas maneras, del Cuadro \ref{Rec} se rescata que el comercio externo es muy sensible al rendimiento de las economías extranjeras, y en el caso de las importaciones al de la economía doméstica. La baja sensibilidad al tipo de cambio real implica que sería necesario cambios muy elevados de este para generar variaciones significativas en el comercio externo boliviano. Las elasticidades estimadas son utilizadas para calcular la ecuación \ref{r}, en el que se utilizan los valores tendenciales de demanda doméstica, demanda externa y precios de exportaciones.
+De todas maneras, del Cuadro \ref{Rec} se rescata que el comercio externo es muy sensible al rendimiento de las economías extranjeras, y en el caso de las importaciones al de la economía doméstica. La baja sensibilidad al tipo de cambio real implica que sería necesario cambios muy elevados de este para generar variaciones significativas en el comercio externo boliviano. Las elasticidades estimadas son utilizadas para calcular el tipo de cambio real de equilibrio, en el que se utilizan los valores tendenciales de demanda doméstica, demanda externa y precios de exportaciones.
 
 Posteriormente se estima la varianza de la variación estimada y se hace la medición para encontrar el valor de equilibrio del tipo de cambio real.
 
 \begin{figure}
+%\captionsetup[subfigure]{aboveskip=-2pt,belowskip=-2pt}
 \caption{Resultados DEER}
 \centering
-\includegraphics[scale=0.75]{tcreq}
+\includegraphics[scale=0.7]{tcreq}
 \end{figure}
 
 De esta evidencia se verifica que el tipo de cambio real estuvo desalineado durante dos periodos de la muestra planteada. A partir del 2006 la diferencia entre el tipo de cambio real observado y de equilibrio tiende a ser mucho menor. A partir del 2014 la divergencia de ambas series comienza a ser fuerte. En estos periodos de desequilibrio se entiende que el tipo de cambio real se encontraba sobre valuado. Es decir que para restaurar el equilibrio era necesario devaluar el boliviano. En efecto, si verificamos paralelamente a los tipos de cambio reales observados y de equilibrio junto con la cuenta corriente observada y de objetivo podemos verificar que los desalineamientos en tipo de cambio coinciden con los de cuenta corriente. 
@@ -678,14 +678,14 @@ Es importante notar que las variaciones de tipo de cambio son un tema particular
 
 Otro punto interesante de estos resultados se enfoca en el periodo previo a 2006. El mismo implica que durante la época neo liberal el tipo de cambio real no estuvo alineado con sus valores de equilibrio a pesar de depreciar el tipo de cambio nominal en función al tipo de cambio referencial que supuestamente  mantiene el tipo de cambio real constante y competitivo. Por lo menos, la cuenta corriente y balanza comercial se encontraron en déficit sostenidos, lo cual bajo ningún concepto se traducen a niveles de equilibrio de tipo de cambio.
 
-\footnote{Si bien esto es cierto, en la realidad los bienes primarios transados bilateralmente entre países tienen como precio aplicable aquel pactado en los contratos suscritos entre partes, el cual puede ser o no el mismo que los determinados por los mercados internacionales, tal vez debido a otros factores como la calidad o el costo de transporte u otras consideraciones. Sin embargo, y sin lugar a dudas estos precios internacionales son el referente de los precios últimos contratados por materias primas.}	
+%\footnote{Si bien esto es cierto, en la realidad los bienes primarios transados bilateralmente entre países tienen como precio aplicable aquel pactado en los contratos suscritos entre partes, el cual puede ser o no el mismo que los determinados por los mercados internacionales, tal vez debido a otros factores como la calidad o el costo de transporte u otras consideraciones. Sin embargo, y sin lugar a dudas estos precios internacionales son el referente de los precios últimos contratados por materias primas.}	
 
 
 
 
 
 
-\subsection{BEER}
+\subsection*{BEER}
 %datos
 Para estimar el modelo de comportamiento se procedió a recolectar la información del tipo de cambio real y de sus fundamentos en frecuencia trimestral, ahora bien a excepción del Tipo de cambio real y de los términos de intercambio el resto de las variables que se consideran son de elaboración propia, en ese sentido se realiza una breve aclaración de la construcción de las mismas. 
 
@@ -698,60 +698,45 @@ Con relación a los pasivos externos netos, Su construcción se basa en la metod
 Por su parte, el gasto de gobierno es analizado desde tres perspectivas: i. En un primer enfoque se compara el gasto de gobierno de Bolivia con el gasto de gobierno de sus principales socios comerciales. Cabe aclarar que el gasto de gobierno ingresa como porcentaje del PIB, de esta manera las variables resultan comparables y se evita posibles sesgos vinculados al tamaño de la información, la agregación del gasto de gobierno de los socios comerciales se la realiza como un promedio ponderado que esta en función del peso comercial de cada economía con Bolivia; ii. En una segunda medida se considera unicamente el gasto de gobierno en bienes no transables como porcentaje del PIB, esta medida es bastante interesante para el análisis, porque permite evaluar las presiones al tipo de cambio real vinculadas directamente a los bienes no transables; iii. La tercera medida evalúa el gasto de gobierno total como porcentaje del PIB. 
 %GRAFICO DE TCR, NFA, CC, TI
 \begin{figure}
-\captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize}
 \centering
+\caption{Datos para BEER}
+\captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize, aboveskip=-1pt,belowskip=-1pt}
     \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{fig7}
-        \caption{\tiny TCR}
+        \caption{TCR}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{fig8}
-        \caption{\tiny NFA}
+        \caption{NFA}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{fig9}
-        \caption{\tiny Saldo CC}
+        \caption{Saldo CC}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)    
    \begin{subfigure}[b]{0.4\textwidth}
        \includegraphics[width=\textwidth]{fig10}
-        \caption{\tiny TI}
+        \caption{TI}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{fig11}
+        \caption{Productividad}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{fig12}
+        \caption{Gasto}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{fig13}
+        \caption{Salarios}
     \end{subfigure}
 \end{figure}
 El resto de variables, es decir el tipo de cambio real y los términos de intercambio se los obtiene de las estadisticas publicadas por el Banco Central de Bolivia. La información tiene frecuencia trimestral, y en lo posible se la construye para el periodo 1991-2017. Sin embargo, como se observa en las gráficas, la presencia de escenarios de volatilidad, puede haber generado cambios en las propiedades estadisticas de las series, modificando su volatilidad y otras propiedades, en ese sentido y con la finalidad de obtener estimaciones robustas las estimaciones se las realiza para el periodo 2004-2017, periodo en el que se observa mayor estabilidad en el comportamiento de las variables consideradas fundamentos.
-
-% GRAFICOS DE PRODUCTIVIDAD GASTO Y SALARIOS 
-\begin{figure}
-\captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize}
-\centering
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{fig7}
-        \caption{\tiny TCR}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{fig8}
-        \caption{\tiny NFA}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{fig9}
-        \caption{\tiny Saldo CC}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)    
-   \begin{subfigure}[b]{0.4\textwidth}
-       \includegraphics[width=\textwidth]{fig10}
-        \caption{\tiny TI}
-    \end{subfigure}
-\end{figure}
 
 Previo a realizar la estimación se efectúa un análisis de correlaciones cruzadas, con el objetivo de documentar las principales regularidades de las variables escogidas como fundamentos con el Tipo de Cambio Real, el objetivo se centra en las regularidades de mediano plazo, a fin de entender la dinámica de equilibrio entre el bloque de variables a ser analizadas. En este sentido se documenta la correlación máxima hallada para diez periodos de adelanto y de rezago, además de la dirección de la correlación, esto ayudará a comprender los signos que se esperarían de la estimación, y permitirá evaluar el desempeño del modelo con la evidencia empírica.
 %Ingresar gráfico de los correlaciones cruzadas
@@ -765,27 +750,29 @@ En cuanto a metodología, las variables a ser analizadas son inicialmente desest
 
 % GRAFICOS DE CORRELACIONES
 \begin{figure}
-\captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize}
+\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
 \centering
-    \begin{subfigure}[b]{0.31\textwidth}
+\caption{Correlaciones}
+\captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{fig14}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.31\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{fig15}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{fig16}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.31\textwidth}
-        \includegraphics[width=\textwidth]{fig16}
-    \end{subfigure}
-   \begin{subfigure}[b]{0.31\textwidth}
+   \begin{subfigure}[b]{0.48\textwidth}
        \includegraphics[width=\textwidth]{fig17}
     \end{subfigure}
-        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)    
-   \begin{subfigure}[b]{0.31\textwidth}
+  
+   \begin{subfigure}[b]{0.48\textwidth}
        \includegraphics[width=\textwidth]{fig18}
     \end{subfigure}
 \end{figure}
@@ -799,9 +786,9 @@ A manera de ejercicio se realiza un modelo 2 con información desde 1996 hasta 2
 
 \begin{table}
 \begin{center}
-\begin{threeparttable}
-\scalebox{0.5}{
-\begin{tabular}{lcccc}									
+\caption{Modelos de cointegración}
+\scalebox{0.8}{%
+\begin{tabular}{lcccc}
 \hline									
 \hline									
 	&	Modelo 1	&	Modelo 2 V1	&	Modelo 2 V2	&	Modelo 3	\\
@@ -827,13 +814,12 @@ ln(WNT/WT)	&		&	0,622**	&	-0,005	&		\\
 	&		&	(0,195)	&	(0,076)	&		\\
 \hline							
 \hline									
-\end{tabular}
+\end{tabular}%
 }	
-\begin{tablenotes}
-\item \scriptsize  \emph{Nota.} La significancia al uno, cinco y diez por ciento es indicada\\ por ***, ** y *, respectivamente. El modelo 2 usa información \\trimestral desde 1996.I hasta 2017.I.
-\end{tablenotes}								
-\end{threeparttable}					
 \end{center}
+\begin{scriptsize}
+\emph{Nota:} La significancia al uno, cinco y diez por ciento es indicad por ***, ** y *, respectivamente. El modelo 2 usa información trimestral desde 1996.I hasta 2017.I.
+\end{scriptsize}								
 \end{table}	
 
 Vale la pena considerar que este tipo de modelos siempre presentará resultados que muestran que los datos observados parecen estar alrededor de la tendencia y dentro de las bandas de confianza del modelo. Esto porque básicamente el modelo de cointegración está usando los datos observados de tipo de cambio real y está calculando el modelo alrededor de ellos. Por tal motivo, no se verá divergencias grandes de la tendencia.
@@ -841,19 +827,19 @@ Vale la pena considerar que este tipo de modelos siempre presentará resultados 
 Sin embargo, lo particular de estos modelos son las variaciones que existen a un nivel de menor frecuencia, es decir los altos y bajos picos que puedan surgir que muestran el desequilibrio del modelo. Desde esa perspectiva y con relación a sus fundamentos, el tipo de cambio real se mantuvo en linea a sus fundamentos, destacan dos picos el primero al cierre de 2016 y el segundo durante 2011-2012, mientras que al cierre de 2016 e inicios de 2017 el valor del tipo de cambio real se encontraría por debajo de su valor de equilibrio.   
 
 %RESULTADOS BEER
+
+\begin{center}
 \begin{figure}
-\centering
+\caption{BEER}
 \includegraphics[width=\textwidth]{fig19}
 \end{figure}
-\end{frame}
-
-
+\end{center}
 
 
 \section{Consideraciones Preliminares}\label{consid}
 
 
-\subsection{Movimientos del tipo de cambio real}
+%\subsection*{Movimientos del tipo de cambio real}
 Debido a que la fórmula de tipo de cambio real es la definida por \ref{tcr1} o \ref{tcrlog} y el tipo de cambio nominal es el principal instrumento de la política cambiaria, se hace tentador simplemente despejar esta variable de la fórmula para que ella indique cual, para el nivel deseado de tipo de cambio real, es el nivel de depreciación nominal necesario para lograr el nivel de TCR definido. Este es el método mediante el cual se encuentra el tipo de cambio referencial al que se hace mención en la introducción de este documento. Sin embargo, el uso de esta estrategia puede ser considerado una falacia teórica.
 
 La razón es porque, en contraposición de los precios extranjeros que son exógenos, los precios de la economía doméstica dependen, o están en función entre otras cosas, del tipo de cambio nominal $p(e)$. Al respecto, la evidencia más grande está en la literatura de \emph{pass-through} de tipo de cambio a inflación, la cuál generalmente obtiene valores distintos de cero y positivos. El hecho que el coeficiente de \emph{pass-through} sea distinto de cero implica que la depreciación del tipo de cambio nominal, desde una perspectiva de instrumento, genera presiones en el nivel de precios hacia el alza. Entonces, tanto el tipo de cambio nominal como el nivel de precios se incrementan determinando que en el corto plazo el efecto de una devaluación nominal se aminore.
@@ -878,7 +864,7 @@ Es posible que la moderada depreciación y el anclaje de la expectativas de los 
 
 
 
-\section{Conclusiones}\label{concl}
+\section*{Conclusiones}\label{concl}
 
 Los modelos muestran que bajo el objetivo de sostenibilidad externa utilizado los mayores desajustes corresponden a los periodos en los que la cuenta corriente se encuentra en desequilibrio principalmente por los déficits en balanza comercial. Al mismo tiempo, estos periodos coinciden con aquellos en los que los precios de materias primas no fueron lo suficientemente beneficiosos para el esquema comercial internacional boliviano.
 
@@ -893,20 +879,18 @@ Como se ha visto, la estabilidad cambiaria tiene gran aporte en la des-dolarizac
 
 Como se ha evidenciado, el tipo de cambio real no es muy influyente para mover la balanza comercial debido a la inelasticidad de sus componentes a esta variable. Sin embargo, se han determinado los periodos en los que, dada la situacón y si el tipo de cambio fuese más flexible, el movimiento del tipo de cambio hubiese mejorado la situación de la economía.
 
+%La regla cambiaria utilizada es incorrecta porque no determina la dirección del TCR, este punto ya ha sido probado hace tiempo.
 
-La regla cambiaria utilizada es incorrecta porque no determina la dirección del TCR, este punto ya ha sido probado hace tiempo.
+%Bolivia necesita entre otras cosas una industria que produzca transables y no transables sustituibles dentro de la economía y fuera también, sin eso estamos dependiendo fuertemente de los designios de los movimientos de la economía extranjera.
 
-
-Bolivia necesita entre otras cosas una industria que produzca transables y no transables sustituibles dentro de la economía y fuera también, sin eso estamos dependiendo fuertemente de los designios de los movimientos de la economía extranjera.
-En esa línea, la segunda metodología permitió establecer los fundamentos que se asocian al tipo de cambio real de equilibrio, los más consistentes fueron el gasto de gobierno, los términos de intercambio, los activos externos netos y la relación de precios transabbles y no transables. Este análisis permitió identificar que según la evidencia empirica por lo general los fundamentos tienden a anticipar los movimientos del tipo de cambio real, en esa línea el gasto de gobierno y las medidas de productividad mantienen la relación que se espera, mientras que los términos de intercambio transmitirían un efecto riqueza y no uno de sustitucion. Si bien según la metodología se espera que el valor del tipo de cambio real se mantenga alineado se constantan quiebres específicos, asociados a factores internos y externos, en los que se observan desalineamientos, sin embargo en términos generales el Tipo de cambio real se mantiene en línea con la evolución de sus fundamentos. 
+En esa línea, la segunda metodología permitió establecer los fundamentos que se asocian al tipo de cambio real de equilibrio, los más consistentes fueron el gasto de gobierno, los términos de intercambio, los activos externos netos y la relación de precios transables y no transables. Este análisis permitió identificar que según la evidencia empírica por lo general los fundamentos tienden a anticipar los movimientos del tipo de cambio real, en esa línea el gasto de gobierno y las medidas de productividad mantienen la relación que se espera, mientras que los términos de intercambio transmitirían un efecto riqueza y no uno de sustitución. Si bien según la metodología se espera que el valor del tipo de cambio real se mantenga alineado se constan quiebres específicos, asociados a factores internos y externos, en los que se observan desalineamientos, sin embargo en términos generales el Tipo de cambio real se mantiene en línea con la evolución de sus fundamentos. 
 
 %Posibilidad de enfermedad holandesa. no existe porque no hay otro sector que se pueda matar.
 
 
-Hay que entender que el tipo de cambio real está calculado en base a las variaciones de los índices de precios al consumidor de los socios comerciales y local y de los tipos de cambio. Como se toma en cuenta los índices de precios al consumidor, esta medida captura la variación real de artículos que entran en la canasta básica de consumo de cada país. Es evidente que esta puede diferir entre economías, sin embargo, el cálculo del tipo de cambio real hace abstracción de estas divergencias y asume que son lo suficientemente parecidas. El punto importante que se debe notar es que captura los precios de bienes de consumo interno y que están dentro de la canasta básica, los cuales no son bienes que Bolivia exporta, en contraposición si son bienes que importa. Por este motivo es que la inclusión de los valores 
+%Hay que entender que el tipo de cambio real está calculado en base a las variaciones de los índices de precios al consumidor de los socios comerciales y local y de los tipos de cambio. Como se toma en cuenta los índices de precios al consumidor, esta medida captura la variación real de artículos que entran en la canasta básica de consumo de cada país. Es evidente que esta puede diferir entre economías, sin embargo, el cálculo del tipo de cambio real hace abstracción de estas divergencias y asume que son lo suficientemente parecidas. El punto importante que se debe notar es que captura los precios de bienes de consumo interno y que están dentro de la canasta básica, los cuales no son bienes que Bolivia exporta, en contraposición si son bienes que importa. Por este motivo es que la inclusión de los valores 
 
+
+\bibliographystyle{apalike}
 \bibliography{tcr_bolivia}
-
-\bibliographystyle{humannat}
-
 \end{document}

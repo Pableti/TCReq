@@ -28,7 +28,7 @@
 %\author{Hugo Pablo Rocha Portugal \and Paola Cecilia Yujra Tonconi}
 \author{10195}
 
-\date{\today}
+\date{14 de septiembre de 2018}
 
 \begin{document} 
 
@@ -654,40 +654,64 @@ El segundo modelo mantiene los signos esperados para el gasto de gobierno total,
 
 \begin{table}
 \begin{center}
-\caption{Modelos de cointegración}
+\caption{Modelos de cointegración, solo con intercepto en la relación de largo plazo}
 \scalebox{0.8}{%
-\begin{tabular}{lcccc}
+\begin{tabular}{lccccccc}
 \hline
 \hline
-									&	Modelo 1	&	Modelo 2 V1	&	Modelo 2 V2	&	Modelo 3	\\
-Variable						&	ln(TCR)		&	ln(TCR)			&	ln(TCR)			&	ln(TCR)	\\
-									&	1				&	1					&	0					&	1	\\
+							&\multicolumn{2}{c}{(1)}&	(2)		&	(3)		&	(4)		&	(5)		\\
+Variables					&	Vec 1	&	Vec 2	&			&			&			&			\\
 \hline
-Constante						&	4,239		&	3,323			&	-3,897			&	4,576	\\
-									&					&						&						&	\\
-$\ln(G_{NT}/Y)$			&	-0,803		&						&						&	\\
-									&	(0,138)		&						&						&		\\
-$\ln(G/Y)$ 					&					&	0					&	-1					&	-1,580**	\\
-									&					&						&						&	(0,321)	\\
-$\ln(AEN/Y)$					&	0,741**		&						&						&		\\
-									&	(7,428)		&						&						&		\\
-$\ln(CC/Y)$					&					&	6,172**			&	-1,106			&	7,236**	\\
-									&					&	(0,650)			&	(0,253)			&	(1,035)	\\
-$\ln(P_X/P_M)$				&	-0,137*		&	-0,645			&	-0,207			&	-1,364*	\\
-									&	(0,128)		&	(0,116)			&	(0,045)			&	(0,218)	\\
-$\ln(P_{NT}/P_T)$			&	0,904**	&						&						&		\\
-									&	(0,128)		&						&						&		\\
-$\ln(PIBpc/PIBpc^*)$	&					&	-0,851**		&	-0,622**		&	\\
-									&					&	(0,233)			&	(0,091)			&		\\
-$\ln(W_{NT}/W_T)$		&					&						&						&	-0,566		\\
-									&					&						&						&	(0,374)	\\
-\hline							
-\hline									
+							&	\multicolumn{6}{c}{Regresión de largo plazo}							\\
+\hline													
+$\ln (TCR)$					&	1		&1,338***	&	1		&	1		&	1		&	1		\\
+							&			&	(0,055)	&			&			&			&			\\
+$\ln (G/Y)$					&0,482***	&	1		&			&0,894***	&			&			\\
+							&	(0,060)	&			&			&(0,205)	&			&			\\
+$\ln (GY^*/G^*Y)$			&			&			&-0,220**	&			&-0,044		&			\\
+							&			&			&	(0,088)	&			&(0,232)	&			\\
+$\ln (G_{NT}/Y)$			&			&			&			&			&			&0,405***	\\
+							&			&			&			&			&			&(0,158)	\\
+$\ln (P_{NT}/P_T)$			&0,263***	&0			&			&			&0,336		&			\\
+							&	(0,075)	&			&			&			&(0,748)	&			\\
+$\ln (PIBpc/PIBpc*)$		&			&			&	0,253	&0,655***	&			&0,724**	\\
+							&			&			&	(0,221)	&(0,235)	&			&(0,341)	\\
+$\ln (P_X/P_M)$				&	0,553***&0,794***	&0,409***	&0,748***	&0,610***	&0,632***	\\
+							&	(0,098)	&(0,043)	&	(0,131)	&(0,139)	&(0,211)	&(0,167)	\\
+$\ln (\tilde{CC}/Y)$		&-0,086**	&-0,131***	&-0,086**	&-0,091***	&			&			\\
+							&	(0,033)	&	(0,043)	&(0,040)	&(0,030)	&			&			\\
+$\ln (\tilde{AEN}/Y))$		&			&			&			&			&-0,280***	&-0,243***	\\
+							&			&			&			&			&(0,034)	&(0,029)	\\
+Constante					&	-6,163	&	-7,912	&	-6,405	&	-3,163	&-7,547		&-3,499		\\
+\hline													
+							&	\multicolumn{6}{c}{Parámetros de corrección de error}				\\
+\hline													
+$\Delta \ln (TCR)$			&-0,269 	&	0,192	&	-0,053*	&	-0,020	&	0,017	&	0,019	\\
+							&	(0,168)	&	(0,132)	&	(0,027)	&	(0,032)	&(0,014)	&(0,016)	\\
+$\Delta \ln (G/Y)$			&1,128***	&-1,015***	&			&	-0,108*	&			&			\\
+							&	(0,284)	&	(0,223)	&			&	(0,064)	&			&			\\
+$\Delta\ln(GY^*/G^*Y)$		&			&			&	0,067	&			&	-0,056	&			\\
+							&			&			&	(0,084)	&			&(0,044)	&			\\
+$\Delta\ln(G_{NT}/Y)$		&			&			&			&			&			&-0,122**	\\
+							&			&			&			&			&			&(0,055)	\\
+$\Delta\ln(P_{NT}/P_T)$		&	-0,034*	&	0		&			&			&	-0,007	&			\\
+							&(0,019)	&			&			&			&	(0,009)	&			\\
+$\Delta\ln(PIBpc/PIBpc*)$	&			&			&	0,039	&	-0,024	&			&-0,008		\\
+							&			&			&	(0,051)	&	(0,059)	&			&(0,030)	\\
+$\Delta\ln(P_X/P_M)$		&-0,008		&-0,018		&	0,015	&	-0,053	&	0,004	&-0,015		\\
+							&	(0,284)	&(0,223)	&	(0,046)	&	(0,051)	&(0,023)	&(0,027)	\\
+$\Delta\ln(\tilde{CC}/Y)$	&21,894***	&-14,328***	&4,364***	&5,030***	&			&			\\
+							&(5,135)	&	(4,025)	&	(0,843)	&	(0,989)	&			&			\\
+$\Delta\ln(\tilde{AEN}/Y))$	&			&			&			&			&4,415***	&5,423***	\\
+							&			&			&			&			&(0,712)	&(0,820)	\\
+\hline													
+\hline													
+			
 \end{tabular}%
 }	
 \end{center}
 \begin{scriptsize}
-\emph{Nota:} La significancia al uno, cinco y diez por ciento es indicad por ***, ** y *, respectivamente. El modelo 2 usa información trimestral desde 1996.I hasta 2017.I.
+\emph{Nota:} La significancia al uno, cinco y diez por ciento es indicada por ***, ** y *, respectivamente. Desviaciones estándar entre paréntesis. $\tilde{CC}/Y = \min CC/Y + \delta$ y $\tilde{AEN}/Y + \min AEN/Y + \delta $, donde $\delta \rightarrow 0$.
 \end{scriptsize}								
 \end{table}	
 
@@ -800,7 +824,7 @@ $\Delta tcr$	&	&	0.499**	&	&	-0.095	\\
 }
 \end{center}
 \begin{scriptsize}
-\emph{Nota:} La significancia al uno, cinco y diez por ciento es indicada por ***, ** y *, respectivamente. Desviaciones estándar en paréntesis.
+\emph{Nota:} La significancia al uno, cinco y diez por ciento es indicada por ***, ** y *, respectivamente. Desviaciones estándar entre paréntesis.
 \end{scriptsize}								
 \label{Rec}	
 \end{table}	

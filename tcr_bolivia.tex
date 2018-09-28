@@ -299,10 +299,11 @@ La identificación clásica del modelo BEER nace de la condición de paridad de 
 \begin{equation}
 \mathbb{E}_t[\Delta e_{t+k}]=-(i_t-i_t^*)+\pi_t.
 \end{equation}
-Utilizar simplemente esta condición impone el reto de incluir en el modelo las expectativas de tipo de cambio, \cite{clark1999exchange} las sustituyeron por las tendencias de los fundamentos.
+Utilizar simplemente esta condición impone el reto de incluir en el modelo las expectativas de tipo de cambio. 
 \begin{equation}
 \hat{q}_t=\mathbb{E}_t[q_{t+k}]+(r_t-r_t^*)+\pi_t.
 \end{equation}
+\cite{clark1999exchange} soluciona el problema sustituyendo el componente esperado por las tendencias de los fundamentos. El resultado de dicha identificación genera la siguiente relación:
 
 %Entonces, se define la condición de paridad de tasas de interés encubierta, las minúsculas indican variables en logaritmos:
 %\begin{equation}
@@ -322,23 +323,31 @@ Utilizar simplemente esta condición impone el reto de incluir en el modelo las 
 %\end{equation}
 %donde $Z_t$ es el conjunto de fundamentos típicamente entendidos como términos de intercambio, ratio de precios no transables respecto a transables y activos extranjeros netos.
 
-El resultado de dicha identificación genera la siguiente relación:
+
 \begin{equation}\label{qb}
 q_t=f(Z_t)+(r_t-r_t^*)+\lambda_t+k,
 \end{equation}
 en la que no existe ningún supuesto de estructura bajo el cual la inclusión de los fundamentos $Z_t$ son admitidos en la relación $f(\cdot)$, lo cual permite experimentar incluyendo y excluyendo fundamentos que se consideren pertinentes. Adicionalmente, $\lambda_t=g(\frac{gd_t}{gd_t^*})$ representa la relación de deuda pública entre la economía local y el extranjero y $k$ es el premio de riesgo. 
 
-De acuerdo a esta identificación, se adelanta que la tendencia de tipo de cambio determina su equilibrio y estará definida en mayor o menor medida por los datos históricos que se tenga de esta variable y sus fundamentos, eso quiere decir que siempre se verá que el tipo de cambio está alrededor de su valor de equilibrio y las demás variables incluidas en el modelo determinarán la forma en la que la serie del TCR podrá ser influenciado en la dirección de su equilibrio. Por tanto, desde esta perspectiva, la política económica estará definida en el uso de los fundamentos para cerrar las brechas con respecto al tipo de cambio real de equilibrio. Lo que queda sin identificar es qué fundamentos incluir.
+De acuerdo a esta identificación, el equilibrio del tipo de cambio real es determinado por sus fundamentos, presiones suscitadas por el libre flujo de capitales internacionales representadas por los desequilibrios a corto plazo en la condición de no arbitraje de las tasas de interés y la posición financiera del país determinada por su nivel deuda comparado con el de otros países. Entonces, para validar la pertinencia de esta identificación se debe cuestionar los supuestos implícitos en su determinación. En primer lugar, la inclusión de los fundamentos económicos del TCR pueden ser entendidos como los determinantes del mismo, el modelo no asume estructura ni supone la inclusión de algún fundamento en particular. El modelo simplemente asume que la expectativa del tipo de cambio real estaría determinada por la operativización de sus fundamentos sean cuales sean. 
 
-Con la finalidad de responder a esta última cuestión, se opta por modelar el valor del tipo de cambio real de equilibrio a partir de un modelo semi-estructural de equilibrio parcial para una pequeña economía abierta, este planteamiento permitirá delimitar las variables a ser denominadas como fundamentos económicos del TCR. Asimismo, nótese que el modelo propuesto es compatible con el caso boliviano desde una perspectiva macroeconómica y para simplemente determinar qué variables básicas incluir en el estudio, además que la simplicidad del mismo es necesaria para lograr el cometido citado previamente.
+En segundo lugar, se debe reconocer que Bolivia es un país con flujo limitado de capitales, lo cual hace que las tasas de interés bolivianas no tengan relación ninguna con las tasas de interés de los otros países. Por este motivo, no se encuentra justificada la inclusión del término de diferencias de tasas de interés reales. Finalmente, la inclusión de $\lambda$ y $k$ que representan la prima al riesgo financiero implica asumir también libre movilidad de capitales, la cual puede ser prescindida en el caso boliviano. Desde esta perspectiva, el modelo BEER debería ser estimado únicamente haciendo uso de los fundamentos. 
 
-En esencia, se considera como base el modelo de \cite{Calderon2004exchange} que a su vez se enmarca en el modelo de bienes transables y no transables de \cite{Obstfeld1995dynamics}. A continuación, se hará referencia a una pequeña economía abierta que interactúa con un país foráneo. Ambas economías cuentan con un sector de bienes transable y uno no transable. El sector de bienes transables, por simplicidad tiene un sólo bien homogéneo, cuyo precio es definido en los mercados internacionales de forma competitiva. En contraparte, el sector no transable mantiene una estructura monopólica con precios rígidos. Precisamente a partir de este supuesto, la especificación permitirá incorporar como fundamento la productividad entre bienes transables y no transables. 
+Las técnicas de estimación de este tipo de identificaciones se realizan mediante modelos de cointegración. En este sentido, al compartir tendencia con sus fundamentos (y otras variables incluidas en la identificación), el valor del TCR  de equilibrio esta determinado por la tendencia de el mismo y sus fundamentos. Entonces, a pesar de utilizar variables en tendencia que son típicamente asumidas como variables de largo plazo, el TCR calculado por BEER es un equilibrio de corto plazo porque determina la tendencia (de equilibrio) del TCR que no se aleja mucho de sus realizaciones, pues estas desviaciones siempre oscilan alrededor de la tendencia entendiéndose como desequilibrios de corto plazo. Entonces, el objeto de análisis político de este modelo yace en entender los mecanismos de ajuste de los fundamentos que harían posible la limitación de dichos desequilibrios.
+
+Sin embargo, la identificación de las variables a ser incluidas en el modelo aún no es clara. Por ejemplo, \cite{clark1999exchange}, igual que muchos otros después de ellos, utilizaron como fundamentos a los términos de intercambio, el ratio de precios no transables y transables y los activos externos netos. Con el objetivo de lograr una identificación más teórica se recurrió a literatura más especializada en la determinación estructural de los determinantes del TCR.
+
+En este sentido, los modelos de equilibrio general que solucionan el problema para una economía pequeña abierta, con gobierno, bienes financieros y mercados transables y no transables son una potencial fuente de identificación. El objetivo no es replicar el modelo completo, sino evaluar la ecuación que determina el TCR en la solución del mismo para identificar las variables que son incluidas desde este punto de vista teórico. Esta estrategia no es nueva, dado que \cite{lane2004trans} la popularizó primero a través de su \emph{working paper}, acto seguido reproducciones y aplicaciones regionales aparecieron, en América del Sur es notorio el documento de \cite{Calderon2004exchange} que se basa en \cite{Calderon2002panel}, siendo que este último está basado en \cite{Obstfeld1995dynamics}.
+
+Existen varios modelos que podrían cumplir este cometido. Sin embargo, a continuación se hará referencia a la ecuación estimada por \cite{Calderon2004exchange} por ser un modelo que cumple con las especificaciones propuestas en el párrafo anterior y porque además, la inclusión en el modelo de \cite{Calderon2002panel} permite una variable más que las encontradas por \cite{lane2004trans}.
+
+Se considera un modelo con dos países, ambas economías cuentan con un sector de bienes transable y uno no transable. El sector de bienes transables, por simplicidad tiene un sólo bien homogéneo, cuyo precio es definido en los mercados internacionales de forma competitiva. En contraparte, el sector no transable mantiene una estructura monopólica con precios rígidos. Precisamente a partir de este supuesto, la especificación permitirá incorporar como fundamento la productividad entre bienes transables y no transables. 
 
 Un segundo aspecto relevante hace referencia a los representantes de la economía doméstica que estarán dotados de una cantidad constante del bien transable en cada periodo, además tienen el poder monopólico sobre uno de los bienes no transables. Mientras que los productores residen en ambos paises en intervalos definidos. 
 
 Con relación a las preferencias sobre el consumo real y el esfuerzo laboral se definen como idénticas para todos los agentes en el mundo, la simetría en preferencias y restricciones presupuestarias darán lugar a la resolución del problema de optimización del consumidor y productor representativo de la economía doméstica. El modelo considera también la introducción del gobierno bajo el supuesto de que éste sólo consume bienes no transables.  
 
-Según la descripción realizada en \cite{Calderon2002panel} y \cite{Calderon2004exchange}, el agente representativo además puede invertir en instrumentos financieros transables internacionales, específicamente en bonos, por lo que estará sujeto a una restricción presupuestaria que será una función del consumo agregado, la dotación de bienes transables, los precios de los bienes transables y no transables y la tasa de retorno real del instrumento financiero. Hacia adelante, este supuesto permitirá incorporar los activos externos netos como fundamento. Como explica \cite{Calderon2002panel}, las soluciones log-linealizadas del modelo incorporadas a la ecuación del tipo de cambio real permiten definir la siguiente estructura: 
+El agente representativo además puede invertir en instrumentos financieros transables internacionales, específicamente en bonos, por lo que estará sujeto a una restricción presupuestaria que será una función del consumo agregado, la dotación de bienes transables, los precios de los bienes transables y no transables y la tasa de retorno real del instrumento financiero. Hacia adelante, este supuesto permitirá incorporar los activos externos netos como fundamento. Como explica \cite{Calderon2002panel}, las soluciones log-linealizadas del modelo incorporadas a la ecuación del tipo de cambio real permiten definir la siguiente estructura: 
 
 \begin{equation}
 \ln q_t=\phi_0+\phi_1\left(\frac{F}{Y}\right)_t+\phi_2\ln\left(\frac{Y_T}{A_N} / \frac{Y_T^*}{A_N^*}\right)_t+\phi_3\ln\left(\frac{P_T^X}{P_T^M}\right)_t+\phi_4\ln\left(\frac{G}{G^*}\right)_t+\mu_t
@@ -546,111 +555,121 @@ La aclaración de histéresis es aplicable también para los modelos BEER en una
 %datos
 Para estimar el modelo de comportamiento se procedió a recolectar la información del tipo de cambio real y de sus fundamentos en frecuencia trimestral. A excepción del TCR y los términos de intercambio $P_X/P_M$, las variables consideradas en el estudio fueron trabajadas especialmente para este estudio. En ese sentido, se realiza una breve aclaración de la construcción de las mismas. 
 
-Al no contar con un indicador oficial para la productividad, se plantean tres medidas para su aproximación. Estas medidas tratan de hacer frente al problema de información limitada: 
+Las siguientes variables son consideradas como proxy de la productividad. Por un lado, se mide el tamaño de la economía local con respecto a sus socios comerciales, lo cual propone dar una idea acerca de nivel competitivo de producción que tiene el país. En espíritu a la identificación de \cite{clark1999exchange} y para admitir el efecto Balassa-Samuelson se incluye el precio relativo de los bienes transables y no transables.
 \begin{itemize}
 \item \emph{Ratio entre el PIB per cápita de Bolivia y el de sus socios comerciales} $PIBpc/PIBpc^*$. Para la construcción de esta variable se utilizaron 13 socios comerciales que equivalen al 92,4\% del comercio total de Bolivia. Con la finalidad de hacer comparables las medidas, se generaron índices de la actividad a partir del PIB nominal de todos los países expresado en dólares estableciendo como periodo base a enero de 2000. Las ponderaciones de comercio para cada uno de los socios comerciales varían anualmente de acuerdo al flujo comercial y se mantienen constantes dentro de la gestión correspondiente. Para calcular los valores per cápitas del PIB se utiliza los valores poblacionales de los países permitiéndolos variar anualmente y manteniéndolos constantes dentro del periodo. 
-\item \emph{Ratio entre los precios de bienes transables y no transables de Bolivia} $P_{NT}/P_T$. Esta segunda aproximación resulta más sencilla de calcular y pretende medir la productividad a partir de de la relación de precios de los bienes transables y no transables. Siguiendo la idea de Balassa-Samuelson, una menor productividad estaría asociada a un crecimiento de precios, mientras que un sector con alta productividad tiende a disminuir sus costos y, por lo tanto, sus precios. 
-\item \emph{Relación entre los salarios del sector productor de bienes transable y no transable} $W_{NT}/W_T$. En esencia, se espera que este indicador brinde nociones similares a la razón de precios transables y no transables descrita previamente. No obstante, la disponibilidad de información y la poca frecuencia en la publicación de la misma es un problema en si. El INE no genera esta información constantemente determinando la irregularidad en la frecuencia de la información, por lo que el desempeño y confianza del indicador es discutible. 
+\item \emph{Ratio entre los precios de bienes transables y no transables de Bolivia} $P_{NT}/P_T$. Esta aproximación al efecto Balassa-Samuelson resulta más sencilla de calcular y pretende medir la productividad a partir de de la relación de precios de los bienes transables y no transables. Siguiendo la idea de Balassa-Samuelson, una menor productividad estaría asociada a un crecimiento de precios, mientras que un sector con alta productividad tiende a disminuir sus costos y, por lo tanto, se permitiría a si misma ser más competitiva y reducir sus precios. 
 \end{itemize}
 
-Con relación a los pasivos externos netos $AEN/Y$, la construcción de esta serie se basa en la metodología propuesta por \cite{lane2002ex}, en la que dicha aproximación se realiza a partir del stock de deuda externa, reservas internacionales y el saldo de la cuenta corriente; toda esta información se extrae de las estadísticas del Fondo Monetario Internacional. Asimismo, algunos autores recomiendan utilizar el saldo de la cuenta corriente $CC/Y$ como un proxy para los pasivos externos netos. 
+Con relación a los pasivos externos netos $AEN/Y$, la construcción de esta serie se basa en la metodología propuesta por \cite{lane2001wealth}, en la que dicha aproximación se realiza a partir del stock de deuda externa, reservas internacionales y el saldo de la cuenta corriente; toda esta información se extrae de las estadísticas del Fondo Monetario Internacional. Asimismo, la posición financiera que el saldo de la cuenta corriente $CC/Y$ refleja puede ser tomado en cuenta como un proxy más simple de la riqueza financiera externa del país. 
 
 Por su parte, el gasto de gobierno es analizado desde tres perspectivas: 
 \begin{itemize}
-\item En un primer enfoque se compara el gasto de gobierno de Bolivia con el gasto de gobierno de sus principales socios comerciales. Cabe aclarar que el gasto de gobierno ingresa como porcentaje del PIB, de esta manera las variables resultan comparables y se evita posibles sesgos vinculados al tamaño de la información, la agregación del gasto de gobierno de los socios comerciales se la realiza como un promedio ponderado que esta en función del peso comercial de cada economía con Bolivia
-\item \emph{Como segunda medida se considera únicamente el gasto de gobierno en bienes no transables como porcentaje del PIB} $GC_{NT}/Y$. Esta medida es bastante interesante para el análisis, porque permite evaluar las presiones al tipo de cambio real vinculadas directamente a los bienes no transables.
-\item La tercera medida evalúa el gasto de gobierno total como porcentaje del PIB $G/Y$. 
+\item \emph{Gasto de gobierno de Bolivia relativo al gasto de gobierno de sus principales socios comerciales} $GY^*/G^*Y$	. Cabe aclarar que los gasto de gobierno ingresan como porcentaje del PIB, de esta manera las variables resultan comparables y se evita posibles sesgos vinculados al tamaño de la información, la agregación del gasto de gobierno de los socios comerciales se la realiza como un promedio ponderado que esta en función del peso comercial de cada economía con Bolivia, de forma similar al PIB per cápita relativo señalado previamente.
+\item \emph{Gasto de gobierno total como porcentaje del PIB} $G/Y$. Esta medida es ya un clásico en la estimación de estos modelos, principalmente procura la influencia del gasto del gobierno general en los precios de bienes no transables. Sin embargo, gran parte de los gastos de esta cuenta fiscal se realizan en transables, por lo que se practica la siguiente aproximación.
+\item \emph{Gasto de gobierno en bienes no transables como porcentaje del PIB} $G_{NT}/Y$. Al igual que el indicador previo, los datos provienen del balance fiscal de gobierno del Ministerio de Economía y Finanzas  Públicas, para su operativización se identifican aquellas cuentas de gasto en carreteras, infraestructura y otras gastos no transables. Asimismo, al no tener una desagregación mayor en estas bases de datos, se admite la contaminación de los datos con gastos en transables. Específicamente, del Gasto Total del Gobierno General son sustraídos los intereses de deuda y los gastos en bienes y servicios del gobierno general, permitiendo que el indicador se concentre en gastos de capital.
 \end{itemize}
 
+Como ya ha sido mencionado, el tipo de cambio real y los términos de intercambio proceden de las estadísticas publicadas por el Banco Central de Bolivia. La información tiene frecuencia trimestral, y en lo posible se la recopila para el periodo 1991-2017. 
+
 \begin{figure}
+\label{grafbeer}
 \centering
 \caption{Datos para BEER}
 \captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize, aboveskip=-1pt,belowskip=-1pt}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{fig7}
         \caption{TCR}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{fig8}
         \caption{NFA}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{fig9}
         \caption{Saldo CC}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)    
-   \begin{subfigure}[b]{0.4\textwidth}
+   \begin{subfigure}[b]{0.49\textwidth}
        \includegraphics[width=\textwidth]{fig10}
         \caption{TI}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{fig11}
         \caption{Productividad}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{fig12}
         \caption{Gasto}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{fig13}
-        \caption{Salarios}
-    \end{subfigure}
 \end{figure}
 
-Como ya ha sido mencionado, el tipo de cambio real y los términos de intercambio se los obtiene de las estadísticas publicadas por el Banco Central de Bolivia. La información tiene frecuencia trimestral, y en lo posible se la recopila para el periodo 1991-2017. Sin embargo, como se observa en los gráficos, la presencia del quiebre estructural en algunas variables previo a 2004, y en aras de obtener estimaciones robustas se realiza algunas de las estimaciones para el periodo 2004-2017.
+\begin{table}
+\caption{Matriz de correlación}
+\begin{center}
+\begin{tabular}{lcccccc}									
+\hline													
+\hline
+							& 	\multicolumn{3}{c}{$TCR$}\\
+							&	1991-2017	&	1991-2003	& 2004-2017	\\
+\hline													
+$PIBpc/PIBpc*$	&	-0,001		&	-0,477			&	-0,568			\\
+$P_{NT}/P_T$		&	0,042		&	-0,609			&	0,395			\\
+$G_{NT}/Y$			&	-0,498		&	-0,422			&	-0,559			\\
+$GY^*/G^*Y$		&	0,102		&	-0,045			&	-0,197			\\
+$G/Y$			 		&	-0,371		&	0,326			&	-0,443			\\
+$P_X/P_M$			&	0,010		&	0,532			&	0,243			\\
+$CC/Y$ 				&	0,467		&	0,587			&	0,705			\\
+$AEN/Y$ 				&	0,414		&	0,832			&	0,704			\\
+\hline													
+\hline									
+\end{tabular}	
+\end{center}						
+\begin{scriptsize}
+\emph{Nota:} Elaboración propia.
+\end{scriptsize}	
+\label{correbeer}	
+\end{table}	
 
-Previo a realizar la estimación se efectúa un análisis de correlaciones cruzadas. El objetivo es documentar las principales regularidades de las variables escogidas como fundamentos con el TCR en el mediano plazo con el fin de entender la dinámica de equilibrio entre el bloque de variables a ser analizadas. En este sentido, se documenta la correlación máxima hallada para diez periodos de adelanto y de rezago. Este ejercicio junto con la dirección del rezago o adelanto ayudará a comprender los signos que se esperarían de la estimación, y permitirá evaluar el desempeño del modelo con la evidencia empírica.
-
-En cuanto a metodología, las variables a ser analizadas son inicialmente desestacionalizadas con el filtro \emph{X-12 ARIMA}, a este conjunto de variables se les extrae el componente de mediano plazo con el filtro de alta frecuencia propuesto por \cite{christiano2003band}, la duración del periodo de estudio se asume entre 4 a 32 trimestres. Una vez removidos los componentes tendenciales se procede a calcular para cada par de variables (TCR y un fundamento a la vez) las funciones de correlación cruzada dinámica, los principales resultados se detallan a continuación:
-
+La revisión de los gráficos delata un quiebre estructural en las relaciones de las variables con respecto al TCR, por lo tanto se contrasta en análisis gráfico con el soporte de correlaciones simples utilizando variables sin el componente estacional:
 \begin{itemize}
-\item Con relación a las medidas de gasto, los tres indicadores reflejan que incrementos en el gasto de gobierno estarían asociados a una apreciación del TCR, la diferencia radica en el tiempo en el que cada variable alcanza su máxima correlación con el TCR. Por un lado, el gasto de gobierno en bienes no transables, tiende a adelantarse en un trimestre a los movimientos del TCR, es decir que presiones por parte del gobierno en los precios de los bienes no transables se traducirian en apreciaciones de TCR; por otro lado, la medida de gasto de gobierno total como proporción del PIB, tiende a moverse con rezago a las variaciones del TCR. 
-En el caso del ratio que mide la relación gasto-pib domético con el foráneo, el indicador refleja que a medida que el gasto de gobierno crece más rápido en relación con el de sus socios comerciales se ejercerá presiones a los precios de los sectores, en este caso se asumiría que dicha presión es directa para el sector de bienes no transables por lo que el proceso de ajuste en los precios se reflejaría en una apreciación del TCR, no obstante al igual que en el caso previo la variable se rezagaría al comportamiento del TCR, lo que quizá evidencia el rezago, es que el ratio como tal no solo considera gasto en bienes no transables sino una medida de gasto total. 
-\item Activos externos netos, la evidencia sugiere que esta variable en realidad se rezaga al comportamiento del TCR en al menos 9 trimestres, la dirección del comovimimiento señala que ante la disminución de pasivos externos netos se originarían presiones para la apreciación del TCR. Visto desde otro punto de vista una posición de activos externa más favorable, permitirá sostener en el tiempo la existencia de un défict fiscal que sería el resultado de mayor gasto en bienes no transables lo que llevaría a una apreciación. Por otro lado tambien se evidencia una correlación positiva a 1 periodo de rezago, que reflejaría a presiones en la depreciación, situación que sería coherente  si los precios no transables son mayores a los precios de productos transables y si los precios no transables externos son mayores a los precios de bienes no transables de Bolivia. 
-\item Con relación a las medidas de productividad, se tienen conclusiones mixtas, el indicador que mide la productividad mediante la razón del PIB per cápita entre Bolivia y sus socios comerciales tiende a adelantarse a los movimientos del tipo de cambio real, la dirección de la correlación indica que aumentos en la productividad se asociarían a una apreciación del TCR. Mientras que un incremento de los precios de transables mayor al de los no transables provocaría una depreciación. Por su parte, el ratio de salarios no presenta una relación clara con el TCR.
-\item Finalmente, según la literatura la relación de los términos con el tipo de cambio real puede ir en dos sentidos. Por un lado, puede dominar el efecto sustitución, es decir en un escenario en el que los bienes importados tienden a abaratarse con relación a los bienes exportados, se incrementaría la demanda por bienes importados, si los bienes son sustitutos su demanda caería los que presionaría una depreciación, este efecto según las funciones de correlaciones cruzadas se observaría a tres trimestres de rezago de los términos de intercambio con el tipo de cambio real con una correlación cercana al 50\%. El segundo canal podría darse a partir del efecto ingreso, según el cual existiría presión sobre el consumo de bienes no transables que se traduzcan en una apreciación del TCR, en la evidencia empírica esta relación reflejaría que los términos de intercambio preceden movimientos del tipo de cambio real con ocho trimestres de rezago y una correlación cercana al -30\%.
+\item Los términos de intercambio presentan una relación levemente procíclica aunque defasada. El cuadro \ref{correbeer} ratifica dicha prociclicidad aunque a un nivel bastante bajo, siendo que durante el primer periodo de corte se presenta la mayor correlación. Esto tiene sentido, debido a que la política cambiaria en dicho periodo estaba enfocada en utilizar las devaluaciones para mejorar el nivel del TCR para incentivar las exportaciones. Esta búsqueda de competitividad también estaba determinado por la presión que los términos de intercambio podrían haber generado, mayor devaluación para contrarestar el descenso de los términos de intercambio procurando la subida del TCR. Nótese que durante este periodo no se logró superávit en cuenta corriente a través de la balanza comercial a pesar de dicho esfuerzo.
+\item Las medidas de gastos de gobierno tienen diferentes comportamientos. \emph{i)} El gasto no transable del gobierno presenta mucha estacionalidad y una relación contracíclica con relación al TCR, esta es la variable con mayor correlación con respecto a la variable dependiente. \emph{ii)} El gasto de gobierno como ratio al gasto de los socios comerciales de Bolivia no muestra una relación clara, las correlaciones son bastante bajas comparadas con las otras variables que sugiere contraciclidad. \emph{iii)} El gasto de gobierno total de Bolivia muestra mucha estacionalidad y parece tener una relación contracíclica con respecto al TCR, aunque previo al 2003 se ve cierta prociclidad.
+\item  Las medidas de riqueza externa muestran una prociclidad con respecto al TCR, aunque parece que la medida $AEN/Y$ se adelanta al TCR mientras que $CC/Y$ reacciona al tipo de cambio real. Indudablemente, estas son las variables que comparten más correlación con la variable dependiente.
 \end{itemize}
 
-\begin{figure}
-\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
-\centering
-\caption{Correlaciones}
-\captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize}
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig14}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig15}
-    \end{subfigure}
 
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{fig16}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-   \begin{subfigure}[b]{0.48\textwidth}
-       \includegraphics[width=\textwidth]{fig17}
-    \end{subfigure}
-  
-   \begin{subfigure}[b]{0.48\textwidth}
-       \includegraphics[width=\textwidth]{fig18}
-    \end{subfigure}
-\end{figure}
 
-En el marco de la evidencia empírica descrita, se realiza la estimación mediante modelos de corrección de errores. Se presentan los resultados para tres especificaciones diferentes. En el primer modelo los fundamentos serán el gasto de gobierno en bienes no transables como porcentaje del PIB, los activos externos netos como porcentaje del PIB, la relación entre precios transables y no transables y los términos de intercambio.
-
-La medida de gasto de gobierno refleja las presiones hacia la apreciación en la medida en la que el valor tiende a incrementarse. Para el caso de los activos externos netos, la variable no tiene el signo esperado, lo que según la evidencia empírica descrita sería consistente con presiones a la depreciación toda vez que los precios de los bienes no transables serían mayores a los transables y los precios de no transables externos resultan mayores al de Bolivia lo que se traduciría en una presión a la depreciación. 
-
-Con relación a las medidas de productividad, la relación de precios no transables y transables reflejaría el signo que se espera, es decir que un incremento del indicador se traduciría en una depreciación. Finalmente, los términos de intercambio reflejarían el efecto riqueza es decir presiones a la apreciación. 
-
-El segundo modelo mantiene los signos esperados para el gasto de gobierno total, la productividad per capita y los términos de intercambio, mismas que generarían presiones a la apreciación según la descripción de la regularidades empiricas, por otro lado las variaciones en el ratio de la cuenta corriente con relación al producto, generaría presiones a la depreciación es decir mientras mayor sea el deficit en cuenta corriente no será posible cubrir un posible déficit fiscal y existiría una reducción en la demanda de bienes no transables generando presiones a la depreciación del TCR. 
+%\begin{figure}
+%\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
+%\centering
+%\caption{Correlaciones}
+%\captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize}
+%    \begin{subfigure}[b]{0.48\textwidth}
+%        \includegraphics[width=\textwidth]{fig14}
+%    \end{subfigure}
+%    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+%      %(or a blank line to force the subfigure onto a new line)
+%    \begin{subfigure}[b]{0.48\textwidth}
+%        \includegraphics[width=\textwidth]{fig15}
+%    \end{subfigure}
+%    \begin{subfigure}[b]{0.48\textwidth}
+%        \includegraphics[width=\textwidth]{fig16}
+%    \end{subfigure}
+%    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+%    %(or a blank line to force the subfigure onto a new line)
+%   \begin{subfigure}[b]{0.48\textwidth}
+%       \includegraphics[width=\textwidth]{fig17}
+%    \end{subfigure}  
+%   \begin{subfigure}[b]{0.48\textwidth}
+%       \includegraphics[width=\textwidth]{fig18}
+%    \end{subfigure}
+%\end{figure}
 
 \begin{table}
 \begin{center}
@@ -660,71 +679,83 @@ El segundo modelo mantiene los signos esperados para el gasto de gobierno total,
 \hline
 \hline
 							&\multicolumn{2}{c}{(1)}&	(2)		&	(3)		&	(4)		&	(5)		\\
-Variables					&	Vec 1	&	Vec 2	&			&			&			&			\\
+Variables				&	Vec 1	&	Vec 2	&			&			&			&			\\
 \hline
 							&	\multicolumn{6}{c}{Regresión de largo plazo}							\\
 \hline													
-$\ln (TCR)$					&	1		&1,338***	&	1		&	1		&	1		&	1		\\
-							&			&	(0,055)	&			&			&			&			\\
-$\ln (G/Y)$					&0,482***	&	1		&			&0,894***	&			&			\\
-							&	(0,060)	&			&			&(0,205)	&			&			\\
-$\ln (GY^*/G^*Y)$			&			&			&-0,220**	&			&-0,044		&			\\
-							&			&			&	(0,088)	&			&(0,232)	&			\\
-$\ln (G_{NT}/Y)$			&			&			&			&			&			&0,405***	\\
-							&			&			&			&			&			&(0,158)	\\
-$\ln (P_{NT}/P_T)$			&0,263***	&0			&			&			&0,336		&			\\
-							&	(0,075)	&			&			&			&(0,748)	&			\\
-$\ln (PIBpc/PIBpc*)$		&			&			&	0,253	&0,655***	&			&0,724**	\\
-							&			&			&	(0,221)	&(0,235)	&			&(0,341)	\\
-$\ln (P_X/P_M)$				&	0,553***&0,794***	&0,409***	&0,748***	&0,610***	&0,632***	\\
-							&	(0,098)	&(0,043)	&	(0,131)	&(0,139)	&(0,211)	&(0,167)	\\
-$\ln (\tilde{CC}/Y)$		&-0,086**	&-0,131***	&-0,086**	&-0,091***	&			&			\\
-							&	(0,033)	&	(0,043)	&(0,040)	&(0,030)	&			&			\\
-$\ln (\tilde{AEN}/Y))$		&			&			&			&			&-0,280***	&-0,243***	\\
-							&			&			&			&			&(0,034)	&(0,029)	\\
-Constante					&	-6,163	&	-7,912	&	-6,405	&	-3,163	&-7,547		&-3,499		\\
+$\ln (TCR)$					&	1				&1,338***		&	1			&	1				&	1				&	1		\\
+									&					&	(0,055)		&				&					&					&			\\
+$\ln (G/Y)$					&0,482***	&	1				&				&0,894***	&					&			\\
+									&	(0,060)		&					&				&(0,205)		&					&			\\
+$\ln (GY^*/G^*Y)$			&					&					&-0,220**	&					&-0,044		&			\\
+									&					&					&	(0,088)	&					&(0,232)		&			\\
+$\ln (G_{NT}/Y)$			&					&					&				&					&					&0,405***	\\
+									&					&					&				&					&					&(0,158)	\\
+$\ln (P_{NT}/P_T)$		&0,263***	&0				&				&					&0,336			&			\\
+									&	(0,075)		&					&				&					&(0,748)		&			\\
+$\ln (PIBpc/PIBpc*)$		&					&					&	0,253	&0,655***	&					&0,724**	\\
+									&					&					&	(0,221)	&(0,235)		&					&(0,341)	\\
+$\ln (P_X/P_M)$			&	0,553***	&0,794***	&0,409***&0,748***	&0,610***		&0,632***	\\
+									&	(0,098)		&(0,043)		&	(0,131)	&(0,139)		&(0,211)		&(0,167)	\\
+$\ln (\tilde{CC}/Y)$		&-0,086**	&-0,131***	&-0,086**&-0,091***	&					&			\\
+									&	(0,033)		&	(0,043)		&(0,040)	&(0,030)		&					&			\\
+$\ln (\tilde{AEN}/Y))$	&					&					&				&					&-0,280***	&-0,243***	\\
+									&					&					&				&					&(0,034)		&(0,029)	\\
+Constante						&	-6,163		&	-7,912		&	-6,405	&	-3,163		&-7,547		&-3,499		\\
 \hline													
-							&	\multicolumn{6}{c}{Parámetros de corrección de error}				\\
+									&	\multicolumn{6}{c}{Velocidad de ajuste de cada variable}				\\
 \hline													
-$\Delta \ln (TCR)$			&-0,269 	&	0,192	&	-0,053*	&	-0,020	&	0,017	&	0,019	\\
-							&	(0,168)	&	(0,132)	&	(0,027)	&	(0,032)	&(0,014)	&(0,016)	\\
-$\Delta \ln (G/Y)$			&1,128***	&-1,015***	&			&	-0,108*	&			&			\\
-							&	(0,284)	&	(0,223)	&			&	(0,064)	&			&			\\
-$\Delta\ln(GY^*/G^*Y)$		&			&			&	0,067	&			&	-0,056	&			\\
-							&			&			&	(0,084)	&			&(0,044)	&			\\
-$\Delta\ln(G_{NT}/Y)$		&			&			&			&			&			&-0,122**	\\
-							&			&			&			&			&			&(0,055)	\\
-$\Delta\ln(P_{NT}/P_T)$		&	-0,034*	&	0		&			&			&	-0,007	&			\\
-							&(0,019)	&			&			&			&	(0,009)	&			\\
-$\Delta\ln(PIBpc/PIBpc*)$	&			&			&	0,039	&	-0,024	&			&-0,008		\\
-							&			&			&	(0,051)	&	(0,059)	&			&(0,030)	\\
-$\Delta\ln(P_X/P_M)$		&-0,008		&-0,018		&	0,015	&	-0,053	&	0,004	&-0,015		\\
-							&	(0,284)	&(0,223)	&	(0,046)	&	(0,051)	&(0,023)	&(0,027)	\\
-$\Delta\ln(\tilde{CC}/Y)$	&21,894***	&-14,328***	&4,364***	&5,030***	&			&			\\
-							&(5,135)	&	(4,025)	&	(0,843)	&	(0,989)	&			&			\\
-$\Delta\ln(\tilde{AEN}/Y))$	&			&			&			&			&4,415***	&5,423***	\\
-							&			&			&			&			&(0,712)	&(0,820)	\\
+$\Delta \ln (T	CR)$				&-0,269 		&	0,192		&	-0,053*	&	-0,020		&	0,017	&	0,019	\\
+										&	(0,168)		&	(0,132)		&	(0,027)		&	(0,032)		&(0,014)	&(0,016)	\\
+$\Delta \ln (G/Y)$				&1,128***		&-1,015***	&					&	-0,108*		&				&			\\
+										&	(0,284)		&	(0,223)		&					&	(0,064)		&				&			\\
+$\Delta\ln(GY^*/G^*Y)$		&					&					&	0,067		&					&	-0,056	&			\\
+										&					&					&	(0,084)		&					&(0,044)	&			\\
+$\Delta\ln(G_{NT}/Y)$		&					&					&					&					&				&-0,122**	\\
+										&					&					&					&					&				&(0,055)	\\
+$\Delta\ln(P_{NT}/P_T)$	&	-0,034*	&	0				&					&					&	-0,007	&			\\
+										&(0,019)		&					&					&					&	(0,009)	&			\\
+$\Delta\ln(PIBpc/PIBpc*)$	&					&					&	0,039		&	-0,024		&				&-0,008		\\
+										&					&					&	(0,051)		&	(0,059)		&				&(0,030)	\\
+$\Delta\ln(P_X/P_M)$		&-0,008		&-0,018		&	0,015		&	-0,053		&	0,004	&-0,015		\\
+										&	(0,284)		&(0,223)		&	(0,046)		&	(0,051)		&(0,023)	&(0,027)	\\
+$\Delta\ln(\tilde{CC}/Y)$	&21,894***	&-14,328***	&4,364***	&5,030***	&				&			\\
+										&(5,135)		&	(4,025)		&	(0,843)		&	(0,989)		&				&			\\
+$\Delta\ln(\tilde{AEN}/Y))$&					&					&					&					&4,415***	&5,423***	\\
+										&					&					&					&					&(0,712)	&(0,820)	\\
 \hline													
 \hline													
-			
 \end{tabular}%
 }	
 \end{center}
 \begin{scriptsize}
 \emph{Nota:} La significancia al uno, cinco y diez por ciento es indicada por ***, ** y *, respectivamente. Desviaciones estándar entre paréntesis. $\tilde{CC}/Y = \min CC/Y + \delta$ y $\tilde{AEN}/Y + \min AEN/Y + \delta $, donde $\delta \rightarrow 0$.
-\end{scriptsize}								
+\end{scriptsize}						
+\label{beercoi}		
 \end{table}	
 
-Vale la pena considerar que este tipo de modelos siempre presentará resultados que muestran que los datos observados parecen estar alrededor de la tendencia y dentro de las bandas de confianza del modelo. Esto porque básicamente el modelo de cointegración está usando los datos observados de tipo de cambio real y está calculando el modelo alrededor de ellos. Por tal motivo, no se verá divergencias grandes de la tendencia.
+En el marco de la evidencia empírica descrita, se realiza la estimación de los modelos de cointragración. Los resultados resumen cinco especificaciones diferentes. La obtención de este reducido número de relaciones se logró probando las distintas opciones de variables proxys que se tiene a disposición para cumplir con la identificación propuesta previamente, se escogieron aquellas que representan la robustez de los resultados obtenidos.
 
-Sin embargo, lo particular de estos modelos son las variaciones que existen a un nivel de menor frecuencia, es decir los altos y bajos picos que puedan surgir que muestran el desequilibrio del modelo. Desde esa perspectiva y con relación a sus fundamentos, el tipo de cambio real se mantuvo en linea a sus fundamentos, destacan dos picos el primero al cierre de 2016 y el segundo durante 2011-2012, mientras que al cierre de 2016 e inicios de 2017 el valor del tipo de cambio real se encontraría por debajo de su valor de equilibrio.   
+Vale la pena recalcar que después de la remoción de los componentes estacionales bajo el método \emph{X-12 ARIMA}, se encontró una raíz unitaria estadística en todas las variables propuestas. La operativización de las variables se realizó a través de la transformación logarítimica como los resultados log-linealizados obtenidos por \cite{lane2004trans} y \cite{Obstfeld1995dynamics}. Posteriormente, se procedió a verificar la existencia de cointegración entre cada conjunto de variables utilizadas habiendo escogido los rezagos óptimos que permite la eliminación de autorrelación en los errores, mediante el método de Johansen. Se concluye que todos los modelos tienen una relación de cointegración mientras solo uno de ellos presentó dos vectores de cointegración.
+
+El cuadro \ref{beercoi} muestra los resultados de las relaciones de largo plazo y los correspondientes parámetros de ajuste. Estos resultados corresponden a 5 relaciones más representativas. Para leer el cuadro, considérese que todas las variables en la regresión de largo plazo expuestas en el primer bloque del cuadro \ref{beercoi} deben igualar a cero, de forma que las variables independientes deben pasar al lado derecho con signo cambiado para obtener la representación convencional $\ln TCR_t=f(\ln Z_t)$. En general, se puede distinguir algunos resultados importantes:
+
+Los términos de intercambio, los proxys de productividad y las representaciones de gasto público influyen en el largo plazo al TCR de manera negativa. La excepción radica en la variable de gasto público nacional respecto al gasto público del extranjero que es débilmente significativa y con influencia positiva. De estos tres conjuntos de variables los términos de intercambio son los más robustos y las representaciones de gasto las menos consistentes en significancia. Finalmente, ambas representaciones de riqueza externa tienen una influencia positiva en el TCR y son altamente robustas.
+
+Con respecto a la velocidad de ajuste, las variables de riqueza externa reaccionan ajustándose positivamente a los cambios en el equilibrio de largo plazo rápidamente, mientras que el gasto, excluyendo la medida relativa con los socios comerciales, parecen ajustarse menos rápido y en dirección contraria a los desequilibrios en el corto plazo. En contraposición, las variables de productividad y términos de intercambio no se ajustan a los desequilibrios de corto plazo, además el TCR muestra relativa exogeneidad débil, con la excepción del expuesta en el segundo modelo que muestra una significancia al 10\%.
+
+Los modelos de corrección de errores indican que las variables más significativas y robustas que influyen en el TCR son el mismo TCR y los activos externos netos generalmente en el primer rezago y los términos de intercambio de manera positiva dentro de los primeros dos rezagos. Por otro lado, las variables de corto plazo con menor robustez e influencia son las variables de gasto, productividad y cuenta corriente. Aquí se debe notar que a pesar que la cuenta corriente y los activos externos netos comparten la misma tendencia, los componentes cíclicos son diferentes y los de $AEN/Y$ tienen influencia en el TCR. Nótese que dentro las variables que afectan al TCR en el corto plazo, la principal variable sobre la cual la política económica podría tener cierto control es esta última.
+
+A la luz de esta evidencia empírica se puede concluir que los modelos de cointegración dan testimonio de una relación fuerte de largo plazo del TCR especialmente con la riqueza externa y los términos de intercambio y en menor medida con el gasto y las medidas de productividad. Por otro lado, los gráficos \ref{grafbeer} y las correlaciones del cuadro \ref{correbeer} sugieren un quiebre de las relaciones de las variables alrededor de 2003. Esta sospecha motiva el corte de la muestra y reestimación de los modelos. Para tal efecto, los modelos pierden la robustez por la menor información contenida en ambas submuestras. Sin embargo, este ejercicio es significativo en el sentido que sugiere que una evaluación más profunda debe ser realizada. 
+
+En este sentido, vale la pena aclarar que el objetivo de la presente sección es obtener el TCR de equilibrio para el periodo de tiempo con el que se cuentan datos (1991-2017) a través del método BEER. Para lo cual se emplean los primeros 3 modelos del cuadro \ref{beercoi} que se presentan en la figura \ref{beergraf}. Como ya había sido adelantado, el TCR se encuentra íntimamente relacionado con la tendencia de equilibrio calculada. Los fundamentos definen dicha trayectoria en todos los casos. Sin embargo, las variaciones de muy corto son determinadas por la riqueza externa y los términos de intercambio.
 
 \begin{figure}
 \centering
 \caption{BEER}
 \includegraphics[scale=0.6]{fig19}
+\label{beergraf}
 \end{figure}
-
 
 \subsection*{FEER}
 

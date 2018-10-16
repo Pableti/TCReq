@@ -67,18 +67,18 @@ next
 '16		ltcr_sa lti_sa lgt_y_sa lproductividad_pc_sa nfa_y 		1-2 ; 1-3					NA	;	1			SI	(L)							
 'Modelos:
 
-mlg_y_cn_sa_lpntyt_sa_cc_y.ec(c,1) 1 4 ltcr_sa lti_sa lg_y_cn_sa lpntyt_sa cc_y   					'M-A'
-mlg_y_cn_sa_lpntyt_sa_nfa_y.ec(c,1) 1 4 ltcr_sa lti_sa lg_y_cn_sa lpntyt_sa nfa_y  					'M-B'
+'mlg_y_cn_sa_lpntyt_sa_cc_y.ec(c,1) 1 4 ltcr_sa lti_sa lg_y_cn_sa lpntyt_sa cc_y   					'M-A'
+'mlg_y_cn_sa_lpntyt_sa_nfa_y.ec(c,1) 1 4 ltcr_sa lti_sa lg_y_cn_sa lpntyt_sa nfa_y  					'M-B'
 mlgk_y_sa_lpntyt_sa_cc_y.ec(c,1) 1 3 ltcr_sa lti_sa lgk_y_sa lpntyt_sa cc_y 								'M-C'
 mlgk_y_sa_lpntyt_sa_nfa_y.ec(c,1) 1 3 ltcr_sa lti_sa lgk_y_sa lpntyt_sa nfa_y 							'M-D'
 mlgk_y_sa_lproductividad_pc_sa_cc_y.ec(c,1) 1 3 ltcr_sa lti_sa lgk_y_sa lproductividad_pc_sa cc_y 	'M-E'
-mlgk_y_sa_lproductividad_pc_sa_nfa_y.ec(c,1) 1 3 ltcr_sa lti_sa lgk_y_sa lproductividad_pc_sa nfa_y 	'M-F'**
+'mlgk_y_sa_lproductividad_pc_sa_nfa_y.ec(c,1) 1 3 ltcr_sa lti_sa lgk_y_sa lproductividad_pc_sa nfa_y 	'M-F'**
 mlgnt_y_sa_lpntyt_sa_cc_y.ec(c,1) 1 2 ltcr_sa lti_sa lgnt_y_sa lpntyt_sa cc_y 							'M-G'
-mlgnt_y_sa_lpntyt_sa_cc_y.ec(c,1) 1 4 ltcr_sa lti_sa lgnt_y_sa lpntyt_sa cc_y 							'M-H'
-mlgnt_y_sa_lproductividad_pc_sa_cc_y.ec(c,1) 1 3 ltcr_sa lti_sa lgnt_y_sa lproductividad_pc_sa cc_y 	'M-I'
-mlgnt_y_sa_lproductividad_pc_sa_nfa_y.ec(c,1) 1 2 ltcr_sa lti_sa lgnt_y_sa lproductividad_pc_sa nfa_y 	'M-J'
-mlgt_y_sa_lpntyt_sa_nfa_y.ec(c,1) 1 4 ltcr_sa lti_sa lgt_y_sa lpntyt_sa nfa_y 							'M-K'
-mlgt_y_sa_lproductividad_pc_sa_nfa_y.ec(c,1) 1 2 ltcr_sa lti_sa lgt_y_sa lproductividad_pc_sa nfa_y 	'M-L'
+'mlgnt_y_sa_lpntyt_sa_cc_y.ec(c,1) 1 4 ltcr_sa lti_sa lgnt_y_sa lpntyt_sa cc_y 							'M-H'
+'mlgnt_y_sa_lproductividad_pc_sa_cc_y.ec(c,1) 1 3 ltcr_sa lti_sa lgnt_y_sa lproductividad_pc_sa cc_y 	'M-I'
+'mlgnt_y_sa_lproductividad_pc_sa_nfa_y.ec(c,1) 1 2 ltcr_sa lti_sa lgnt_y_sa lproductividad_pc_sa nfa_y 	'M-J'
+'mlgt_y_sa_lpntyt_sa_nfa_y.ec(c,1) 1 4 ltcr_sa lti_sa lgt_y_sa lpntyt_sa nfa_y 							'M-K'
+'mlgt_y_sa_lproductividad_pc_sa_nfa_y.ec(c,1) 1 2 ltcr_sa lti_sa lgt_y_sa lproductividad_pc_sa nfa_y 	'M-L'
 
 
 ' f. TCR equilibrio

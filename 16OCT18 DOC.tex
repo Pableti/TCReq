@@ -568,7 +568,7 @@ Por su parte, el gasto de gobierno es analizado desde cuatro perspectivas:
 \item \emph{Gasto total del gobierno general relativo al PIB} $G{T}/Y$. La medida es un clásico en la estimación de este tipo de modelos, e intenta captar la influencia del gasto del gobierno general sobre los precios no transables, no obstante esta primera aproximación considera el total de gastos en bienes transables y no transables realizados por el gobierno general. 
 \item \emph{Gasto del gobierno general en bienes no transables como porcentaje del PIB} $G_{NT}/Y$. Al igual que el indicador previo, los datos provienen del balance fiscal de gobierno del Ministerio de Economía y Finanzas  Públicas, para su operativización se identifican aquellas cuentas de gasto en carreteras, infraestructura y otras gastos no transables. Asimismo, al no tener una desagregación mayor en estas bases de datos, se admite la contaminación de los datos con gastos en transables. Específicamente, del Gasto Total del  Gobierno General son sustraídos los intereses de deuda y los gastos en bienes y servicios del gobierno general, permitiendo que el indicador se concentre en gastos de capital.
 \item \emph{Gasto del gobierno general en capital} $G_{K}/Y$. La medida se concentra exclusivamente en el componente de gasto de capital y a diferencia del indicador previo no considera la inclusion de gastos corrientes del gobierno general que se asociarían a un componente de servicios y no así bienes. los datos corresponden a las estadisticas del balance fiscal del gobierno general del Ministerio de Economía y Finanzas Públicas y se lo expresa como porcentaje del PIB. 
-\item \emph{Gasto de consumo final de la administración pública como porcentaje del PIB} $G_{NT}/Y$. La medida refleja el consumo final total de la administración pública tanto en bienes transables y no transables y a diferencia del primer indicador se abarca no solo al gobierno general sino a la totalidad de la administración pública. La información proviene de las estadisticas de cuentas nacionales del instituto nacional de estadística.  
+\item \emph{Gasto de consumo final de la administración pública como porcentaje del PIB} $G/Y$. La medida refleja el consumo final total de la administración pública tanto en bienes transables y no transables y a diferencia del primer indicador se abarca no solo al gobierno general sino a la totalidad de la administración pública. La información proviene de las estadisticas de cuentas nacionales del instituto nacional de estadística.  
 \end{itemize}
 
 Como ya ha sido mencionado, el tipo de cambio real y los términos de intercambio proceden de las estadísticas publicadas por el Banco Central de Bolivia. La información tiene frecuencia trimestral, y en lo posible se la recopila para el periodo 1991-2017. 
@@ -639,18 +639,19 @@ Como ya ha sido mencionado, el tipo de cambio real y los términos de intercambi
 
 \hline													
 \hline
-							& 	\multicolumn{3}{c}{$TCR$}\\
+	&	\multicolumn{3}{c}{$TCR$}\\					
 	&	1991-2017	&	1991-2003	&	2004-2017	\\
 \hline							
-$G/Y$	&	-0,34	&	0,10	&	-0,44	\\
-$G_{K}/Y$	&	-0,47	&	0,11	&	-0,57	\\
-$G_{NT}/Y$	&	-0,46	&	-0,03	&	-0,56	\\
-$G_{T}/Y$	&	-0,53	&	-0,10	&	-0,62	\\
-$PIBpc/PIBpc*$	&	-0,03	&	-0,26	&	-0,56	\\
+$G/Y$	&	-0,37	&	-0,01	&	-0,44	\\
+$G_{K}/Y$	&	-0,50	&	-0,02	&	-0,57	\\
+$G_{NT}/Y$	&	-0,50	&	-0,19	&	-0,56	\\
+$G_{T}/Y$	&	-0,57	&	-0,27	&	-0,62	\\
+$PIBpc/PIBpc*$	&	-0,03	&	-0,37	&	-0,56	\\
 $P_{NT}/P_T$	&	0,04	&	-0,28	&	0,40	\\
-$P_X/P_M$	&	0,01	&	-0,26	&	0,24	\\
-$CC/Y$	&	0,40	&	0,30	&	0,68	\\
-$AEN/Y$	&	0,45	&	0,21	&	0,68	\\
+$P_X/P_M$	&	0,01	&	-0,11	&	0,24	\\
+$CC/Y$	&	0,40	&	0,34	&	0,68	\\
+$AEN/Y$	&	0,45	&	0,27	&	0,68	\\
+							
 \hline													
 \hline									
 \end{tabular}	
@@ -662,9 +663,10 @@ $AEN/Y$	&	0,45	&	0,21	&	0,68	\\
 \end{table}						
 La revisión de los gráficos delata un quiebre estructural en las relaciones de las variables con respecto al TCR, por lo tanto se contrasta en análisis gráfico con el soporte de correlaciones simples utilizando variables sin el componente estacional:
 \begin{itemize}
-\item Los términos de intercambio presentan una relación levemente procíclica aunque defasada. El cuadro \ref{correbeer} ratifica dicha prociclicidad aunque a un nivel bastante bajo, siendo que durante el primer periodo de corte se presenta la mayor correlación. Esto tiene sentido, debido a que la política cambiaria en dicho periodo estaba enfocada en utilizar las devaluaciones para mejorar el nivel del TCR para incentivar las exportaciones. Esta búsqueda de competitividad también estaba determinado por la presión que los términos de intercambio podrían haber generado, mayor devaluación para contrarestar el descenso de los términos de intercambio procurando la subida del TCR. Nótese que durante este periodo no se logró superávit en cuenta corriente a través de la balanza comercial a pesar de dicho esfuerzo.
-\item Las medidas de gastos de gobierno tienen diferentes comportamientos. \emph{i)} El gasto no transable del gobierno presenta mucha estacionalidad y una relación contracíclica con relación al TCR, esta es la variable con mayor correlación con respecto a la variable dependiente. \emph{ii)} El gasto de gobierno como ratio al gasto de los socios comerciales de Bolivia no muestra una relación clara, las correlaciones son bastante bajas comparadas con las otras variables que sugiere contraciclidad. \emph{iii)} El gasto de gobierno total de Bolivia muestra mucha estacionalidad y parece tener una relación contracíclica con respecto al TCR, aunque previo al 2003 se ve cierta prociclidad.
-\item  Las medidas de riqueza externa muestran una prociclidad con respecto al TCR, aunque parece que la medida $AEN/Y$ se adelanta al TCR mientras que $CC/Y$ reacciona al tipo de cambio real. Indudablemente, estas son las variables que comparten más correlación con la variable dependiente.
+\item Los términos de intercambio presentan una relación levemente procíclica aunque defasada. El cuadro \ref{correbeer} ratifica dicha prociclicidad aunque a un nivel bastante bajo, siendo que durante el primer periodo de corte la correlación es negativa, y refleja un cambio en la dinámica de esta variable con el TCR, cabe recalcar que en este primer periodo la política cambiaria estaba enfocada en utilizar las devaluaciones para mejorar el nivel del TCR para incentivar las exportaciones. Esta búsqueda de competitividad también estaba determinado por la presión que los términos de intercambio podrían haber generado, mayor devaluación para contrarrestar el descenso de los términos de intercambio procurando la subida del TCR. Nótese que durante este periodo no se logró superávit en cuenta corriente a través de la balanza comercial a pesar de dicho esfuerzo.
+\item Las diferentes medidas del gasto de gobierno tienen un desempeño bastante coordinando en cuanto a la dirección y magnitud de las correlaciones. Sin embargo, al igual que en el caso de los términos de intercambio existen diferencias asociadas en el desempeño de las dos muestras analizadas. Las cuatro medidas de gasto presentan correlaciones relativamente elevadas con relación al TCR que se encuentra alrededor de -0,50, las mismas denotan contraciclicidad en su movimientos, siendo el gasto total del gobierno general la varible con los niveles más altos de correlación de todo el set de variables a ser analizadas. 
+\item  Las medidas de riqueza externa muestran  prociclidad con respecto al TCR, analizando sus coeficientes de correlación para algunos periodos de rezago, ambas variables $CC/Y$ y $AEN/Y$ parecieran reaccionar al tipo de cambio real. Ambas medidas presentan el segundo nivel de correlación más elevada con relación a la variable dependiente.
+\item Con relación a las variables que miden la productividad, estas presentan desempeños mixtos, aunque en términos generales para toda la muestra analizada, no es posible destacar un patron de comportamiento segun el nivel de correlación ya que los mismos son demasiado bajos, No obstante para el segmento de periodo que comprende los años 2004 y 20017, la productividad percápita es contraciclíca al TCR, mientras que la relación de precios transables y no transables es procíclica.   
 \end{itemize}
 
 
